@@ -1,0 +1,16 @@
+query Rates($limit: Int, $page: Int, $isActive: Boolean) {
+  rates(limit: $limit, page: $page, isActive: $isActive) {
+    collection {
+      id
+      displayOrder
+      name
+      isActive
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

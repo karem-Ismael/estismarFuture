@@ -1,0 +1,9 @@
+mutation CreateRate($arName: String!, $enName: String!, $displayOrder: Int!, $isActive: Boolean, $isBarq:Boolean,
+    $isInstantConfirmation: Boolean) {
+  createRate(displayOrder: $displayOrder, isActive: $isActive, arName: $arName, enName: $enName,isBarq:$isBarq,isInstantConfirmation:$isInstantConfirmation) {
+    rate {
+      id
+      name
+    }
+  }
+}

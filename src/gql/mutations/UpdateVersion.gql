@@ -1,0 +1,24 @@
+mutation UpdateCarVersion(
+  $carModelId: ID
+  $carVersionId: ID!
+  $image: String
+  $images: [String!]
+  $year: Int
+  $isActive: Boolean
+  $features: [ID!]
+  $vehicleTypeId: ID
+) {
+  updateCarVersion(
+    carModelId: $carModelId
+    carVersionId: $carVersionId
+    image: $image
+    images: $images
+    year: $year
+    isActive: $isActive
+    features: $features
+    vehicleTypeId: $vehicleTypeId
+  ) {
+    errors
+    status
+  }
+}

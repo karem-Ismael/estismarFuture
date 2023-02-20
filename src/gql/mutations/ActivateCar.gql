@@ -1,0 +1,6 @@
+mutation ActivateCar($availabilityStatus: Boolean!, $carId: ID!) {
+  activateCar(availabilityStatus: $availabilityStatus, carId: $carId) {
+    errors
+    status
+  }
+}

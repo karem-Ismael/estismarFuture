@@ -1,0 +1,10 @@
+mutation ResendRentalIntegration($rentalId: ID!) {
+  resendRentalIntegration(rentalId: $rentalId) {
+    errors
+    rental {
+      rentalIntegrationStatus
+      rentalIntegrationErrorMessage
+    }
+    status
+  }
+}

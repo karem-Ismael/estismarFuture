@@ -1,0 +1,6 @@
+mutation ConfirmBusinessRental($businessRentalId: ID!) {
+  confirmBusinessRental(businessRentalId: $businessRentalId) {
+    errors
+    status
+  }
+}

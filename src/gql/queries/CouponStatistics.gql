@@ -1,0 +1,7 @@
+query CouponStatistics($couponId:ID!){
+  couponStatistics(couponId:$couponId) {
+    couponSales
+    noOfUsage
+    noOfUsers
+  }
+}

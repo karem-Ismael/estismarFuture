@@ -1,0 +1,6 @@
+mutation DeleteBanner($id: ID!) {
+  deleteBanner(id: $id) {
+    errors
+    status
+  }
+}

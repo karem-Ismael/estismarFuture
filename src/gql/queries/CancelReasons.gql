@@ -1,0 +1,7 @@
+query CancelledReasons($status: String!, $userType: String!) {
+  cancelledReasons(status: $status, userType: $userType) {
+    arBody
+    enBody
+    id
+  }
+}

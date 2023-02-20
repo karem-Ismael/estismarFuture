@@ -1,0 +1,25 @@
+.MuiInputBase-root {
+  min-height: 50px !important ;
+}
+.rtl * label {
+  /* right: 20px !important ; */
+}
+#karem {
+  transform: translate(11px, -8px) scale(0.9) !important;
+}
+.rent .MuiInputLabel-outlined.MuiInputLabel-shrink {
+  transform: translate(27px, -6px) scale(0.75) !important;
+}
+.rent label.MuiInputLabel-shrink {
+  margin-right: 6px !important;
+  margin-left: -10px !important;
+}
+.kilo label.MuiInputLabel-shrink {
+  margin-right: 6px !important;
+}
+.kiloper label.MuiInputLabel-shrink {
+  margin-right: -6px !important;
+}
+.kiloperday label.MuiInputLabel-shrink {
+  margin-right: -11px !important;
+}

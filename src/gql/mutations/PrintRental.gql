@@ -1,0 +1,5 @@
+mutation PrintRental($rentalId:ID!) {
+  printRental(rentalId:$rentalId) {
+    fileBase64
+  }
+}

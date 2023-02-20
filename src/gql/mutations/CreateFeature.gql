@@ -1,0 +1,22 @@
+mutation CreateFeature(
+  $category: String!
+  $displayOrder: Int
+  $icon: String!
+  $isActive: Boolean
+  $nameAr: String!
+  $nameEn: String!
+  $parentId: Int
+) {
+  createFeature(
+    category: $category
+    displayOrder: $displayOrder
+    icon: $icon
+    isActive: $isActive
+    nameAr: $nameAr
+    nameEn: $nameEn
+    parentId: $parentId
+  ) {
+    errors
+    status
+  }
+}

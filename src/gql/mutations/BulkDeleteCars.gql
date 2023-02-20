@@ -1,0 +1,6 @@
+mutation BulkDeleteCars($carIds: [ID!]!) {
+  bulkDeleteCars(carIds: $carIds) {
+    errors
+    status
+  }
+}

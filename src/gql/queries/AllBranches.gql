@@ -1,0 +1,95 @@
+query Branches(
+  $limit: Int
+  $page: Int
+  $isActive: Boolean
+  $branchId: ID
+  $allyCompanyIds: [ID!]
+  $areaIds: [ID!]
+  $isDeleted: Boolean
+) {
+  branches(
+    limit: $limit
+    page: $page
+    isActive: $isActive
+    branchId: $branchId
+    areaIds: $areaIds
+    allyCompanyIds: $allyCompanyIds
+    isDeleted: $isDeleted
+  ) {
+    collection {
+      deletedAt
+      area {
+        arName
+        enName
+        id
+      }
+      id
+      name
+      arName
+      enName
+      isActive
+      canHandover
+      canDelivery
+      officeNumber
+      branchExtraServices {
+        allyExtraService {
+          extraService {
+            arTitle
+            enTitle
+          }
+        }
+        arSubtitle
+        branchId
+        enSubtitle
+        id
+        isActive
+        isRequired
+        payType
+        serviceValue
+        subtitle
+        totalServiceValue
+      }
+      branchDeliveryPrices {
+        deliveryPrice
+        handoverPrice
+        from
+        to
+      }
+      allyCompany {
+        id
+        arName
+        enName
+        email
+        allyExtraServicesForAlly {
+          extraService {
+            arTitle
+            enTitle
+          }
+          allyCompanyId
+          arSubtitle
+          enSubtitle
+          extraServiceId
+          id
+          isActive
+          isRequired
+          payType
+          serviceValue
+          showFor
+          subtitle
+          totalServiceValue
+        }
+        allyHandoverCities {
+          pickUpCityId
+          dropOffCityId
+          price
+        }
+      }
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

@@ -1,0 +1,6 @@
+mutation SortExtraService($extraServicesArr: [ExtraServicesSortingAttributes!]!) {
+  sortExtraService(extraServicesArr: $extraServicesArr) {
+    errors
+    status
+  }
+}

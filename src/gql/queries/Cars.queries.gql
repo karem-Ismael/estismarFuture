@@ -1,0 +1,305 @@
+# Car Profile
+query GetCarProfile($id: ID!) {
+  carProfile(id: $id) {
+    accidentPenalty
+    additionalDistanceCost
+    allyConditions
+    availabilityStatus
+    bookingStatus
+    branch {
+      availableHandoverBranches {
+        name
+        id
+        areaId
+        allyCompany {
+          allyHandoverCities {
+            pickUpCityId
+            dropOffCityId
+            price
+          }
+        }
+      }
+      address
+      allyCompanyId
+      arName
+      areaId
+      bankCardImage
+      branchClass
+      branchState
+      canDelivery
+      carCount
+      deliverToAirport
+      distanceBetweenBranchUser
+      enName
+      fixedDeliveryFees
+      id
+      isActive
+      lat
+      lng
+      lonlat
+      name
+      officeNumber
+      rate
+    }
+    branchClass
+    branchId
+    carFeatures {
+      arKey
+      arValue
+      carId
+      enKey
+      enValue
+      featureId
+      icon
+      key
+      value
+    }
+    carIdImage
+    carImages
+    carInsurances {
+      carId
+      id
+      insuranceId
+      insuranceName
+      value
+      monthlyValue
+    }
+    carMakeName
+    carModel {
+      arName
+      enName
+      id
+      name
+    }
+    carModelId
+    carModelName
+    carVersion {
+      arName
+      enName
+      id
+      image
+      name
+      year
+    }
+    carVersionId
+    carVersionName
+    color
+    dailyPrice
+    deliverToCustomerLocationCost
+    distance
+    distanceBetweenCarUser
+    distanceByDay
+    distanceByMonth
+    distanceByWeek
+    guaranteeAmount
+    id
+    lat
+    lng
+    lonlat
+    make {
+      arName
+      enName
+      id
+      logo
+      name
+      status
+    }
+    makeId
+    monthlyPrice
+
+    priceForPeriod
+    transmission
+    transmissionName
+    vehicleType {
+      arName
+      enName
+      id
+      image
+      name
+      status
+    }
+    vehicleTypeName
+    year
+  }
+}
+
+# Available Cars to Rent
+query GetAvailableCars(
+  $pickStartDate: String
+  $pickEndDate: String
+  $dropOffLocationId: ID
+  $branchId: ID
+  $pickUpLocationId: ID
+  $isActive: Boolean
+  $make: ID
+  $model: ID
+  $version: ID
+  $pickStartTime: String
+  $pickEndTime: String
+  $page: Int
+  $limit: Int
+  $canDelivery: Boolean
+) {
+  cars(
+    pickStartDate: $pickStartDate
+    pickEndDate: $pickEndDate
+    branchId: $branchId
+    pickUpLocationId: $pickUpLocationId
+    dropOffLocationId: $dropOffLocationId
+    pickStartTime: $pickStartTime
+    pickEndTime: $pickEndTime
+    isActive: $isActive
+    make: $make
+    model: $model
+    version: $version
+    page: $page
+    limit: $limit
+    canDelivery: $canDelivery
+  ) {
+    collection {
+      isUnlimited
+      unlimitedFeePerDay
+      branch {
+        id
+        enName
+        arName
+        address
+        branchWorkingDays {
+          id
+          startTime
+          weekDayString
+          endTime
+          weekDay
+        }
+      }
+      carInsurances {
+        id
+        insuranceId
+        insuranceName
+        value
+      }
+      branchClass
+      branchId
+      carIdImage
+      carImages
+      make {
+        enName
+        arName
+      }
+      carModelId
+      carModel {
+        enName
+        arName
+      }
+      carVersionId
+      carVersion {
+        enName
+        arName
+      }
+      color
+      dailyPrice
+      deliverToCustomerLocationCost
+      distance
+      distanceBetweenCarUser
+      distanceByDay
+      distanceByMonth
+      distanceByWeek
+      guaranteeAmount
+      id
+      lat
+      lng
+      lonlat
+      makeId
+      monthlyPrice
+      weeklyPrice
+
+      priceForPeriod
+      transmission
+      transmissionName
+      # vehicleTypeName
+      year
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}
+
+# Makes
+query GetMakesQuery($page: Int, $limit: Int, $orderBy: String, $sortBy: String) {
+  makes(page: $page, limit: $limit, orderBy: $orderBy, sortBy: $sortBy) {
+    collection {
+      id
+      arName
+      enName
+      logo
+      status
+    }
+    metadata {
+      currentPage
+      totalCount
+    }
+  }
+}
+query GetMakesQueryForSelect($page: Int, $limit: Int, $orderBy: String, $sortBy: String) {
+  makes(page: $page, limit: $limit, orderBy: $orderBy, sortBy: $sortBy) {
+    collection {
+      id
+      arName
+      enName
+    }
+  }
+}
+
+# Models
+query GetCarsModels($limit: Int, $make: Int, $page: Int) {
+  carModels(limit: $limit, make: $make, page: $page) {
+    collection {
+      id
+      arName
+      enName
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}
+
+# Versions
+query GetcarsVersions(
+  $carModelId: Int
+  $limit: Int
+  $page: Int
+  $year: Int
+  $sortBy: String
+  $orderBy: String
+) {
+  carVersions(
+    carModelId: $carModelId
+    limit: $limit
+    page: $page
+    year: $year
+    orderBy: $orderBy
+    sortBy: $sortBy
+  ) {
+    collection {
+      arName
+      enName
+      id
+      name
+      year
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

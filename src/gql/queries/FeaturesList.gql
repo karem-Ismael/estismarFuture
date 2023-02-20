@@ -1,0 +1,35 @@
+query Features(
+  $category: String
+  $isChildren: Boolean
+  $limit: Int
+  $page: Int
+  $isActive: Boolean
+) {
+  features(
+    category: $category
+    isActive: $isActive
+    isChildren: $isChildren
+    limit: $limit
+    page: $page
+  ) {
+    collection {
+      category
+      icon
+      id
+      nameAr
+      nameEn
+      parent {
+        icon
+        id
+        nameAr
+        nameEn
+      }
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

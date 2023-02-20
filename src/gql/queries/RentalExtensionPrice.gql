@@ -1,0 +1,13 @@
+query RentalExtensionRequestPrice($dropOffDate:String!,$dropOffTime:String!,$paymentMethod:PaymentMethod,$rentalId:ID!){
+  rentalExtensionRequestPrice(
+    dropOffDate: $dropOffDate
+    dropOffTime: $dropOffTime
+    paymentMethod: $paymentMethod
+    rentalId: $rentalId
+  ) {
+    extensionDays
+    pricePerDay
+    totalBookingPrice
+    totalRemainingPrice
+  }
+}

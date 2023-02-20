@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  frontend:
+    container_name: dashboard
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - "8000:80"
+    env_file:
+      - ./src/.env.local

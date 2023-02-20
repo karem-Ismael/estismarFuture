@@ -1,0 +1,12 @@
+mutation CarRecieved($rentalId: ID!) {
+  carReceived(rentalId: $rentalId) {
+    errors
+    status
+  }
+}
+mutation BusinessCarReceived($businessRentalId: ID!) {
+  businessCarReceived(businessRentalId: $businessRentalId) {
+    errors
+    status
+  }
+}

@@ -1,0 +1,13 @@
+query Feature($id: ID!) {
+  feature(id: $id) {
+    category
+    displayOrder
+    icon
+    id
+    isActive
+    name
+    nameAr
+    nameEn
+    parentId
+  }
+}

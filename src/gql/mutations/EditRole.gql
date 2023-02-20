@@ -1,0 +1,22 @@
+mutation EditRole(
+  $arName: String
+  $id: ID!
+  $arDescription: String
+  $enDescription: String
+  $enName: String
+  $privileges: [ID!]!
+) {
+  editRole(
+    input: {
+      id: $id
+      arName: $arName
+      arDescription: $arDescription
+      enDescription: $enDescription
+      enName: $enName
+      privileges: $privileges
+    }
+  ) {
+    errors
+    success
+  }
+}

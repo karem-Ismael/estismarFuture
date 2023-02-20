@@ -1,0 +1,8 @@
+query GetInsurencesTypes {
+  insurances(filter: null) {
+    arName
+    enName
+    id
+    name
+  }
+}

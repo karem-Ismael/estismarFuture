@@ -1,0 +1,21 @@
+query ExtraServices($limit: Int, $page: Int, $isActive: Boolean) {
+  extraServices(limit: $limit, page: $page, isActive: $isActive) {
+    collection {
+      id
+      arDescription
+      isActive
+      payType
+      enDescription
+      arTitle
+      enTitle
+      displayOrder
+      isSpecial
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

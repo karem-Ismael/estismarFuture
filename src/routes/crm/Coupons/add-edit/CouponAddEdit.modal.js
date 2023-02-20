@@ -1,0 +1,18 @@
+export const addCouponInitValues = {
+  cityIds: [],
+  code: "",
+  discountType: "",
+  allyCompanyIds: [],
+  startAt: null,
+  numOfUsages: "",
+  numOfUsagesPerUser: "",
+  discountValue: "",
+  expireAt: null,
+  maxLimitValue: "",
+  numOfDays: undefined,
+  minRentDays: undefined,
+  minRentPrice: "",
+  branchIds: [],
+  carVersionIds: [],
+  paymentMethod: undefined,
+};

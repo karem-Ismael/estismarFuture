@@ -1,0 +1,8 @@
+query Insurances {
+  insurances {
+    arName
+    enName
+    id
+    name
+  }
+}

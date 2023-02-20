@@ -1,0 +1,7 @@
+query CarFeatures($limit: Int, $page: Int) {
+  carFeatures(limit: $limit, page: $page) {
+    arName
+    enName
+    id
+  }
+}

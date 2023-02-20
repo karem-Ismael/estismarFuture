@@ -1,0 +1,7 @@
+query VehicleTypes {
+  vehicleTypes {
+    arName
+    enName
+    id
+  }
+}

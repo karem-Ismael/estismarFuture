@@ -1,0 +1,16 @@
+.MuiListItem-root {
+  text-align: inherit !important;
+}
+
+.modal-body {
+  height: 500px;
+  overflow-y: auto;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    /* max-width: 500px; */
+    margin: 1.75rem auto;
+    max-width: 937px;
+  }
+}

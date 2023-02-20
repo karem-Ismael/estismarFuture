@@ -1,0 +1,5 @@
+@media (max-width: 500px) {
+  .modal-content {
+    width: fit-content !important;
+  }
+}

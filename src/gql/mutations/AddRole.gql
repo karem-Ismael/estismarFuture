@@ -1,0 +1,20 @@
+mutation AddRole(
+  $arName: String
+  $arDescription: String
+  $enDescription: String
+  $enName: String
+  $privileges: [ID!]!
+) {
+  addRole(
+    input: {
+      arName: $arName
+      arDescription: $arDescription
+      enDescription: $enDescription
+      enName: $enName
+      privileges: $privileges
+    }
+  ) {
+    errors
+    status
+  }
+}

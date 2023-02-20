@@ -1,0 +1,9 @@
+query companyBranches($id: ID!) {
+  allyCompany(id: $id) {
+    branches {
+      id
+      enName
+      arName
+    }
+  }
+}

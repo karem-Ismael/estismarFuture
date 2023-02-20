@@ -1,0 +1,6 @@
+mutation DeleteExtraService($extraServiceId: ID!) {
+  deleteExtraService(extraServiceId: $extraServiceId) {
+    errors
+    status
+  }
+}

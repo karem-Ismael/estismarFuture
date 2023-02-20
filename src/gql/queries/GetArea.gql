@@ -1,0 +1,12 @@
+query GetArea($lat: Float!, $lng: Float!) {
+  area(lat: $lat, lng: $lng) {
+    arName
+    enName
+    centerLat
+    centerLng
+
+    id
+    isAirport
+    name
+  }
+}

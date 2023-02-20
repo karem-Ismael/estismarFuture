@@ -1,0 +1,22 @@
+mutation UpdateFeature(
+  $category: String
+  $displayOrder: Int
+  $featureId: ID!
+  $icon: String
+  $isActive: Boolean
+  $nameAr: String
+  $nameEn: String
+) {
+  updateFeature(
+    category: $category
+    displayOrder: $displayOrder
+    featureId: $featureId
+    icon: $icon
+    isActive: $isActive
+    nameAr: $nameAr
+    nameEn: $nameEn
+  ) {
+    errors
+    status
+  }
+}

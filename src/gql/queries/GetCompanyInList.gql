@@ -1,0 +1,7 @@
+query AllyCompany($id: ID!) {
+  allyCompany(id: $id) {
+    enName
+    arName
+    id
+  }
+}

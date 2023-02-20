@@ -1,0 +1,28 @@
+mutation UpdateExtraService(
+  $displayOrder: Int
+  $isSpecial: Boolean
+  $arDescription: String
+  $arTitle: String
+  $enDescription: String
+  $enTitle: String
+  $extraServiceId: ID!
+  $isActive: Boolean
+  $payType: String
+  $iconUrl: String
+) {
+  updateExtraService(
+    displayOrder: $displayOrder
+    isSpecial: $isSpecial
+    arDescription: $arDescription
+    arTitle: $arTitle
+    enDescription: $enDescription
+    enTitle: $enTitle
+    extraServiceId: $extraServiceId
+    isActive: $isActive
+    payType: $payType
+    iconUrl: $iconUrl
+  ) {
+    errors
+    status
+  }
+}

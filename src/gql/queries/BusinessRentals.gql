@@ -1,0 +1,172 @@
+query BusinessRequests(
+  $limit: Int
+  $page: Int
+  $id: ID
+  $makeId: ID
+  $pickUpCityId: ID
+  $customerName: String
+) {
+  businessRequests(
+    limit: $limit
+    page: $page
+    id: $id
+    makeId: $makeId
+    pickUpCityId: $pickUpCityId
+    customerName: $customerName
+  ) {
+    collection {
+      additionalNotes
+      allyCompanyId
+      bookingNo
+      businessActivityId
+      businessActivityName
+      carImage
+      carModelId
+      carVersionId
+      commercialRegistrationCertificate
+      commercialRegistrationNo
+      companyEmail
+      companyName
+      companyPhone
+      createdAt
+      id
+      insuranceId
+      makeId
+      makeName
+      modelName
+      numberOfCars
+      numberOfMonths
+      otherCarName
+      phone
+      pickUpCityId
+      pickUpCityName
+      pickUpDatetime
+      userId
+      status
+      customerName
+      insuranceName
+      year
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}
+
+query BusinessRentals(
+  $bookingNo: String
+  $customerMobile: String
+  $customerName: String
+  $allyCompanyName: String
+  $customerNid: String
+  $dropOffDate: String
+  $dropOffDateTo: String
+  $pickUpDate: String
+  $pickUpDateFrom: String
+  $status: String
+  $id: ID
+  $limit: Int
+  $makeId: ID
+  $page: Int
+  $pickUpCityId: ID
+  $orderBy: String
+  $sortBy: String
+) {
+  businessRentals(
+    bookingNo: $bookingNo
+    customerMobile: $customerMobile
+    customerName: $customerName
+    allyCompanyName: $allyCompanyName
+    customerNid: $customerNid
+    dropOffDate: $dropOffDate
+    dropOffDateTo: $dropOffDateTo
+    pickUpDate: $pickUpDate
+    pickUpDateFrom: $pickUpDateFrom
+    status: $status
+    id: $id
+    limit: $limit
+    makeId: $makeId
+    page: $page
+    pickUpCityId: $pickUpCityId
+    orderBy: $orderBy
+    sortBy: $sortBy
+  ) {
+    collection {
+      acceptedOffer {
+        additionalKilometer
+        allyClass
+        allyCompanyId
+        allyCompanyName
+        allyRate
+        businessRentalId
+        carInsuranceFull
+        carInsuranceStandard
+        createdAt
+        id
+        kilometerPerMonth
+        offerPrice
+        policyAndConditions
+        status
+        statusLocalized
+      }
+      additionalNotes
+      allyClass
+      allyCompanyId
+      allyRate
+      arBusinessActivity
+      arMakeName
+      arModelName
+      arPickUpCityName
+      bookingNo
+      businessActivityId
+      businessActivityName
+      cancelledAt
+      cancelledReason
+      carImage
+      carModelId
+      carVersionId
+      closedAt
+      closedReason
+      commercialRegistrationCertificate
+      commercialRegistrationNo
+      companyEmail
+      companyName
+      companyPhone
+      createdAt
+      customerName
+      enBusinessActivity
+      enMakeName
+      enModelName
+      enPickUpCityName
+      id
+      insuranceId
+      insuranceName
+      makeId
+      makeName
+      modelName
+      numberOfCars
+      numberOfMonths
+      otherCarName
+      phone
+      pickUpCityId
+      pickUpCityName
+      pickUpDatetime
+      dropOffDatetime
+      status
+      statusLocalized
+      userId
+      pricePerMonth
+      totalBookingPrice
+      year
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

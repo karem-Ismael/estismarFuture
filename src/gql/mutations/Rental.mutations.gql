@@ -1,0 +1,226 @@
+mutation CreateBooking(
+  $carId: ID!
+  $deliveryPrice: Float
+  $handoverPrice: Float
+  $dropOffBranchId: ID!
+  $dropOffCityId: ID!
+  $dropOffDate: String!
+  $dropOffTime: String!
+  $insuranceId: ID!
+  $pickUpCityId: ID!
+  $pickUpDate: String!
+  $pickUpTime: String!
+  $userId: ID!
+  $deliverAddress: String
+  $deliverLat: Float
+  $deliverLng: Float
+  $deliverType: String
+  $paymentMethod: PaymentMethod!
+  $suggestedPrice: Float
+  $allyExtraServices: [ID!]
+  $branchExtraServices: [ID!]
+  $handoverLat: Float
+  $handoverLng: Float
+  $handoverAddress: String
+  $isUnlimited: Boolean
+) {
+  createRental(
+    deliveryPrice: $deliveryPrice
+    handoverPrice: $handoverPrice
+    carId: $carId
+    deliverAddress: $deliverAddress
+    deliverLat: $deliverLat
+    deliverLng: $deliverLng
+    deliverType: $deliverType
+    dropOffBranchId: $dropOffBranchId
+    dropOffCityId: $dropOffCityId
+    dropOffDate: $dropOffDate
+    dropOffTime: $dropOffTime
+    insuranceId: $insuranceId
+    paymentMethod: $paymentMethod
+    pickUpCityId: $pickUpCityId
+    pickUpDate: $pickUpDate
+    pickUpTime: $pickUpTime
+    userId: $userId
+    suggestedPrice: $suggestedPrice
+    allyExtraServices: $allyExtraServices
+    branchExtraServices: $branchExtraServices
+    handoverLat: $handoverLat
+    handoverLng: $handoverLng
+    handoverAddress: $handoverAddress
+    isUnlimited: $isUnlimited
+  ) {
+    errors
+    rental {
+      allyCompanyId
+      arAllyName
+      arDropOffCityName
+      arMakeName
+      arModelName
+      arPickUpCityName
+      arVersionName
+      branchId
+      carId
+      carImage
+      dropOffCityId
+      dropOffCityName
+      dropOffDate
+      dropOffTime
+      enAllyName
+      enDropOffCityName
+      enMakeName
+      enModelName
+      enPickUpCityName
+      enVersionName
+      id
+      makeName
+      modelName
+      numberOfDays
+      paymentMethod
+      pickUpCityId
+      pickUpCityName
+      pickUpDate
+      pickUpTime
+      priceBeforeInsurance
+      pricePerDay
+      status
+      subStatus
+      taxValue
+      totalBookingPrice
+      totalInsurancePrice
+      userId
+      valueAddedTaxPercentage
+      versionName
+      year
+    }
+    status
+  }
+}
+mutation EditBooking(
+  $carId: ID!
+  $handoverLat: Float
+  $handoverLng: Float
+  $handoverPrice: Float
+  $dropOffBranchId: ID!
+  $dropOffCityId: ID!
+  $dropOffDate: String!
+  $dropOffTime: String!
+  $insuranceId: ID!
+  $pickUpCityId: ID!
+  $pickUpDate: String!
+  $pickUpTime: String!
+  $deliverAddress: String
+  $deliverLat: Float
+  $deliverLng: Float
+  $deliverType: String
+  $paymentMethod: PaymentMethod!
+  $suggestedPrice: Float
+  $rentalId: ID!
+  $allyExtraServices: [ID!]
+  $branchExtraServices: [ID!]
+  $note: String
+  $handoverAddress: String
+  $isUnlimited: Boolean
+  $deliveryPrice: Float
+) {
+  editRental(
+    carId: $carId
+    deliverType: $deliverType
+    deliverAddress: $deliverAddress
+    deliverLat: $deliverLat
+    deliverLng: $deliverLng
+    dropOffBranchId: $dropOffBranchId
+    dropOffCityId: $dropOffCityId
+    dropOffDate: $dropOffDate
+    dropOffTime: $dropOffTime
+    insuranceId: $insuranceId
+    paymentMethod: $paymentMethod
+    pickUpCityId: $pickUpCityId
+    pickUpDate: $pickUpDate
+    pickUpTime: $pickUpTime
+    suggestedPrice: $suggestedPrice
+    rentalId: $rentalId
+    allyExtraServices: $allyExtraServices
+    branchExtraServices: $branchExtraServices
+    note: $note
+    handoverLat: $handoverLat
+    handoverLng: $handoverLng
+    handoverPrice: $handoverPrice
+    handoverAddress: $handoverAddress
+    isUnlimited: $isUnlimited
+    deliveryPrice: $deliveryPrice
+  ) {
+    errors
+    rental {
+      allyCompanyId
+      arAllyName
+      arDropOffCityName
+      arMakeName
+      arModelName
+      arPickUpCityName
+      arVersionName
+      branchId
+      carId
+      carImage
+      dropOffCityId
+      dropOffCityName
+      dropOffDate
+      dropOffTime
+      enAllyName
+      enDropOffCityName
+      enMakeName
+      enModelName
+      enPickUpCityName
+      enVersionName
+      id
+      makeName
+      modelName
+      numberOfDays
+      paymentMethod
+      pickUpCityId
+      pickUpCityName
+      pickUpDate
+      pickUpTime
+      priceBeforeInsurance
+      pricePerDay
+      status
+      subStatus
+      taxValue
+      totalBookingPrice
+      totalInsurancePrice
+      userId
+      valueAddedTaxPercentage
+      versionName
+      year
+    }
+    status
+  }
+}
+mutation CreateRentalDateExtensionRequest(
+  $rentalId: ID!
+  $dropOffDate: String!
+  $dropOffTime: String!
+  $paymentMethod: PaymentMethod!
+) {
+  createRentalDateExtensionRequest(
+    rentalId: $rentalId
+    dropOffDate: $dropOffDate
+    dropOffTime: $dropOffTime
+    paymentMethod: $paymentMethod
+  ) {
+    status
+    errors
+  }
+}
+mutation UpdateRentalDateExtensionRequest($id: ID!, $dropOffDate: String!, $dropOffTime: String!) {
+  updateRentalDateExtensionRequest(id: $id, dropOffDate: $dropOffDate, dropOffTime: $dropOffTime) {
+    status
+    errors
+  }
+}
+mutation RejectRentalDateExtensionRequest($rentalExtensionId: ID!) {
+  rejectRentalDateExtensionRequest(rentalExtensionId: $rentalExtensionId) {
+    status
+    errors
+  }
+}

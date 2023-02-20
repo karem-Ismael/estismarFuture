@@ -1,0 +1,6 @@
+mutation DeleteCarVersion($carVersionId: ID!) {
+  deleteCarVersion(carVersionId: $carVersionId) {
+    errors
+    status
+  }
+}

@@ -1,0 +1,13 @@
+query Branches($allyCompanyIds: [ID!], $pickupHandoverBranchId: ID) {
+  branches(allyCompanyIds: $allyCompanyIds, pickupHandoverBranchId: $pickupHandoverBranchId) {
+    collection {
+      id
+      area {
+        arName
+        enName
+      }
+      districtNameAr
+      districtNameEn
+    }
+  }
+}

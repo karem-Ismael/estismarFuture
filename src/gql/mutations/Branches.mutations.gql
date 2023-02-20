@@ -1,0 +1,136 @@
+mutation CreateNewBranch(
+  $allyCompanyId: ID!
+  $arName: String!
+  $areaId: ID!
+  $branchWorkingDayAttributes: [BranchWorkingDayAttributes!]!
+  $canDelivery: Boolean
+  $deliverToAirport: Boolean
+  $enName: String!
+  $fixedDeliveryFees: Float
+  $isActive: Boolean
+  $lat: Float!
+  $lng: Float!
+  $branchExtraServicesAttributes: [BranchExtraServicesAttributes!]
+  $officeNumber: String!
+  $mobileNumber: String
+  $isOnlinePayEnable: Boolean
+  $description: String
+  $districtNameAr: String
+  $districtNameEn: String
+  $paymentMethod: BranchPaymentMethod
+  $branchDeliveryPriceAttributes: [BranchDeliveryPriceAttributes!]
+  $canHandover: Boolean
+  $regionId: ID
+  $referenceCode: String
+  $deliveryPaymentMethod: DeliveryPaymentMethod
+  $deliveryGraceTime: String
+  $addressAr: String!
+  $addressEn: String!
+  $airportId: ID
+) {
+  createBranch(
+    addressAr: $addressAr
+    addressEn: $addressEn
+    allyCompanyId: $allyCompanyId
+    arName: $arName
+    areaId: $areaId
+    branchWorkingDayAttributes: $branchWorkingDayAttributes
+    canDelivery: $canDelivery
+    deliverToAirport: $deliverToAirport
+    enName: $enName
+    fixedDeliveryFees: $fixedDeliveryFees
+    isActive: $isActive
+    lat: $lat
+    lng: $lng
+    officeNumber: $officeNumber
+    mobileNumber: $mobileNumber
+    isOnlinePayEnable: $isOnlinePayEnable
+    description: $description
+    districtNameAr: $districtNameAr
+    districtNameEn: $districtNameEn
+    paymentMethod: $paymentMethod
+    branchDeliveryPriceAttributes: $branchDeliveryPriceAttributes
+    canHandover: $canHandover
+    regionId: $regionId
+    branchExtraServicesAttributes: $branchExtraServicesAttributes
+    referenceCode: $referenceCode
+    deliveryPaymentMethod: $deliveryPaymentMethod
+    deliveryGraceTime: $deliveryGraceTime
+    airportId: $airportId
+  ) {
+    branch {
+      id
+    }
+    errors
+    status
+  }
+}
+mutation EditBranch(
+  $arName: String!
+  $enName: String!
+  $branchId: ID!
+  $allyCompanyId: ID!
+  $areaId: ID!
+  $branchWorkingDayAttributes: [BranchWorkingDayAttributes!]!
+  $canDelivery: Boolean
+  $deliverToAirport: Boolean
+  $fixedDeliveryFees: Float
+  $isActive: Boolean
+  $lat: Float!
+  $lng: Float!
+  $officeNumber: String
+  $mobileNumber: String
+  $isOnlinePayEnable: Boolean
+  $description: String
+  $districtNameAr: String
+  $districtNameEn: String
+  $paymentMethod: BranchPaymentMethod
+  $branchDeliveryPriceAttributes: [BranchDeliveryPriceAttributes!]
+  $canHandover: Boolean
+  $branchExtraServicesAttributes: [BranchExtraServicesAttributes!]
+  $regionId: ID
+  $referenceCode: String
+  $deliveryPaymentMethod: DeliveryPaymentMethod
+  $deliveryGraceTime: String
+  $addressAr: String
+  $addressEn: String
+  $airportId: ID
+) {
+  updateBranch(
+    branchId: $branchId
+    addressAr: $addressAr
+    addressEn: $addressEn
+    allyCompanyId: $allyCompanyId
+    arName: $arName
+    areaId: $areaId
+    branchWorkingDayAttributes: $branchWorkingDayAttributes
+    canDelivery: $canDelivery
+    deliverToAirport: $deliverToAirport
+    enName: $enName
+    fixedDeliveryFees: $fixedDeliveryFees
+    isActive: $isActive
+    lat: $lat
+    lng: $lng
+    officeNumber: $officeNumber
+    mobileNumber: $mobileNumber
+    isOnlinePayEnable: $isOnlinePayEnable
+    description: $description
+    districtNameAr: $districtNameAr
+    districtNameEn: $districtNameEn
+    paymentMethod: $paymentMethod
+    branchDeliveryPriceAttributes: $branchDeliveryPriceAttributes
+    canHandover: $canHandover
+    branchExtraServicesAttributes: $branchExtraServicesAttributes
+    regionId: $regionId
+    referenceCode: $referenceCode
+    deliveryPaymentMethod: $deliveryPaymentMethod
+    deliveryGraceTime: $deliveryGraceTime
+    airportId: $airportId
+  ) {
+    branch {
+      id
+    }
+    errors
+    status
+  }
+}

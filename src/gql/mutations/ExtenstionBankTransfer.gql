@@ -1,0 +1,35 @@
+mutation RefundExtensionBankTransfer(
+$amount:Float! 
+$rentalDateExtensionRequestId:ID!
+){
+  refundExtensionBankTransfer(
+    amount:$amount,
+    rentalDateExtensionRequestId:$rentalDateExtensionRequestId
+  ) {
+    errors
+    rentalDateExtensionRequest {
+    #   canCancel
+    #   canSendExtensionToAlly
+    #   createdAt
+    #   dropOffDate
+    #   dropOffTime
+    #   extensionDays
+    #   extensionRequestIntegrationResponse
+    #   extensionRequestIntegrationStatus
+      id
+    #   isPaid
+    #   paidAt
+    #   paymentMethod
+    #   paymentStatusCode
+    #   pickUpDate
+    #   pickUpTime
+    #   refundable
+  
+    #   requestNo
+    #   status
+    #   statusLocalized
+    #   totalRemainingPrice
+    }
+    status
+  }
+}

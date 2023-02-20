@@ -1,0 +1,6 @@
+mutation DeleteBranch($branchId: ID!) {
+  deleteBranch(branchId: $branchId) {
+    errors
+    status
+  }
+}

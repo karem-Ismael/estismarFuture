@@ -1,0 +1,6 @@
+query CustomerStatuses {
+  customerStatuses {
+    key
+    value
+  }
+}

@@ -1,0 +1,59 @@
+query Branch($id: ID!) {
+  branch(id: $id) {
+    address
+
+    allyCompany {
+      phoneNumber
+    }
+    # allyCompanyId
+    id
+    arName
+    area {
+      arName
+      enName
+      name
+    }
+
+    airport {
+      arName
+      centerLat
+      centerLng
+      enName
+      id
+      name
+    }
+
+    branchClass
+    branchState
+
+    branchWorkingDays {
+      startTime
+      weekDay
+      isOn
+      endTime
+      is24hAvailable
+    }
+    canDelivery
+    carCount
+
+    cheapestCarPrice
+    deliverToAirport
+    distanceBetweenBranchUser
+    enName
+    fixedDeliveryFees
+    id
+    isActive
+    lat
+    lng
+    lonlat
+    name
+    officeNumber
+    rate
+    shiftsToday {
+      endTime
+      isOn
+      startTime
+      weekDay
+    }
+  }
+}

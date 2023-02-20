@@ -1,0 +1,9 @@
+mutation CreateBanner($displayOrder: Int!, $imgAr: String!, $imgEn: String!, $isActive: Boolean) {
+  createBanner(displayOrder: $displayOrder, imgAr: $imgAr, imgEn: $imgEn, isActive: $isActive) {
+    errors
+    status
+    banner {
+      id
+    }
+  }
+}

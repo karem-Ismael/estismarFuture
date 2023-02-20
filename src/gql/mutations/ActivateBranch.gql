@@ -1,0 +1,6 @@
+mutation ActivateBranch($branchId: ID!, $isActive: Boolean!) {
+  activateBranch(branchId: $branchId, isActive: $isActive) {
+    errors
+    status
+  }
+}

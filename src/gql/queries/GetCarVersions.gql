@@ -1,0 +1,35 @@
+query CarVersions(
+  $carModelId: Int
+  $limit: Int
+  $page: Int
+  $orderBy: String
+  $year: Int
+  $sortBy: String
+  $branchIds: [ID!]
+) {
+  carVersions(
+    carModelId: $carModelId
+    limit: $limit
+    page: $page
+    year: $year
+    sortBy: $sortBy
+    orderBy: $orderBy
+    branchIds: $branchIds
+  ) {
+    collection {
+      id
+      arName
+      enName
+      name
+      year
+      carModel {
+        arName
+        enName
+        make {
+          arName
+          enName
+        }
+      }
+    }
+  }
+}

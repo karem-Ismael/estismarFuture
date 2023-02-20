@@ -1,0 +1,37 @@
+mutation CreateMakeMutation($arName: String!, $enName: String!, $logo: String!) {
+  createMake(arName: $arName, enName: $enName, logo: $logo) {
+    make {
+      id
+      arName
+      enName
+    }
+    errors
+    status
+  }
+}
+
+mutation DeleteMakeMutation($makeId: ID!) {
+  deleteMake(makeId: $makeId) {
+    errors
+    status
+  }
+}
+
+mutation UpdateMakeMutation(
+  $arName: String
+  $enName: String
+  $logo: String
+  $makeId: ID!
+  $status: Boolean
+) {
+  updateMake(arName: $arName, enName: $enName, logo: $logo, makeId: $makeId, status: $status) {
+    errors
+    make {
+      id
+      arName
+      enName
+      status
+    }
+    status
+  }
+}

@@ -1,0 +1,27 @@
+mutation CreateModelMutation($arName: String!, $enName: String!, $makeId: ID) {
+  createCarModel(arName: $arName, enName: $enName, makeId: $makeId) {
+    carModel {
+      arName
+      enName
+      make {
+        id
+      }
+    }
+    errors
+    status
+  }
+}
+
+mutation EditModelMutation($id: ID!, $arName: String!, $enName: String!, $makeId: ID) {
+  updateCarModel(id: $id, arName: $arName, enName: $enName, makeId: $makeId) {
+    carModel {
+      arName
+      enName
+      make {
+        id
+      }
+    }
+    errors
+    status
+  }
+}

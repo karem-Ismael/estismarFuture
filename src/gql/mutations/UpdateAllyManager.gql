@@ -1,0 +1,7 @@
+mutation UpdateAllyManager($input: UpdateAllyManagerInput!) {
+  updateAllyManager(input: $input) {
+    clientMutationId
+    errors
+    status
+  }
+}

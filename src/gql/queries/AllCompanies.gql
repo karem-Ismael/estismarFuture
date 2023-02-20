@@ -1,0 +1,36 @@
+query AllyCompanies(
+  $isActive: Boolean
+  $limit: Int
+  $page: Int
+  $pickupCityId: Int
+  $dropoffCityId: Int
+  $cityId: Int
+) {
+  allyCompanies(
+    isActive: $isActive
+    limit: $limit
+    page: $page
+    pickupCityId: $pickupCityId
+    dropoffCityId: $dropoffCityId
+    cityId: $cityId
+  ) {
+    collection {
+      email
+      allyClass
+      isActive
+      addedBy
+      phoneNumber
+      managerName
+      id
+      logo
+      arName
+      enName
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

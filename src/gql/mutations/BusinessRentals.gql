@@ -1,0 +1,152 @@
+mutation CreateBusinessRentalOffer(
+  $businessRentalId: ID
+  $additionalKilometer: Float!
+  $allyCompanyId: ID!
+  $carInsuranceFull: Float
+  $carInsuranceStandard: Float
+  $kilometerPerMonth: Float!
+  $offerPrice: Float!
+) {
+  createBusinessRentalOffer(
+    businessRentalId: $businessRentalId
+    additionalKilometer: $additionalKilometer
+    allyCompanyId: $allyCompanyId
+    carInsuranceFull: $carInsuranceFull
+    carInsuranceStandard: $carInsuranceStandard
+    kilometerPerMonth: $kilometerPerMonth
+    offerPrice: $offerPrice
+  ) {
+    businessRentalOffer {
+      status
+    }
+    errors
+    status
+  }
+}
+mutation CreateBusinessRental(
+  $additionalNotes: String
+  $carModelId: ID
+  $carVersionId: ID
+  $insuranceId: ID!
+  $makeId: ID
+  $numberOfCars: Int!
+  $numberOfMonths: Int!
+  $otherCarName: String
+  $pickUpCityId: ID!
+  $pickUpDatetime: String!
+  $userId: ID!
+) {
+  createBusinessRental(
+    additionalNotes: $additionalNotes
+    carModelId: $carModelId
+    carVersionId: $carVersionId
+    insuranceId: $insuranceId
+    makeId: $makeId
+    numberOfCars: $numberOfCars
+    numberOfMonths: $numberOfMonths
+    otherCarName: $otherCarName
+    pickUpCityId: $pickUpCityId
+    pickUpDatetime: $pickUpDatetime
+    userId: $userId
+  ) {
+    businessRental {
+      additionalNotes
+      arBusinessActivity
+      arMakeName
+      arModelName
+      arPickUpCityName
+      businessActivityId
+      businessActivityName
+      carImage
+      carModelId
+      carVersionId
+      commercialRegistrationCertificate
+      commercialRegistrationNo
+      companyEmail
+      companyName
+      companyPhone
+      enBusinessActivity
+      enMakeName
+      enModelName
+      enPickUpCityName
+      id
+      insuranceId
+      makeId
+      makeName
+      modelName
+      numberOfCars
+      numberOfMonths
+      otherCarName
+      phone
+      pickUpCityId
+      pickUpCityName
+      pickUpDatetime
+      userId
+      year
+    }
+  }
+}
+
+mutation UpdateBusinessRental(
+  $additionalNotes: String
+  $carModelId: ID
+  $carVersionId: ID
+  $insuranceId: ID!
+  $businessRentalId: ID!
+  $makeId: ID
+  $numberOfCars: Int!
+  $numberOfMonths: Int!
+  $otherCarName: String
+  $pickUpCityId: ID!
+  $pickUpDatetime: String!
+) {
+  updateBusinessRental(
+    additionalNotes: $additionalNotes
+    carModelId: $carModelId
+    carVersionId: $carVersionId
+    insuranceId: $insuranceId
+    businessRentalId: $businessRentalId
+    makeId: $makeId
+    numberOfCars: $numberOfCars
+    numberOfMonths: $numberOfMonths
+    otherCarName: $otherCarName
+    pickUpCityId: $pickUpCityId
+    pickUpDatetime: $pickUpDatetime
+  ) {
+    businessRental {
+      additionalNotes
+      arBusinessActivity
+      arMakeName
+      arModelName
+      arPickUpCityName
+      businessActivityId
+      businessActivityName
+      carImage
+      carModelId
+      carVersionId
+      commercialRegistrationCertificate
+      commercialRegistrationNo
+      companyEmail
+      companyName
+      companyPhone
+      enBusinessActivity
+      enMakeName
+      enModelName
+      enPickUpCityName
+      id
+      insuranceId
+      makeId
+      makeName
+      modelName
+      numberOfCars
+      numberOfMonths
+      otherCarName
+      phone
+      pickUpCityId
+      pickUpCityName
+      pickUpDatetime
+      userId
+      year
+    }
+  }
+}

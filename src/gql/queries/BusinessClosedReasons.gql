@@ -1,0 +1,8 @@
+query BusinessClosedReasons {
+  businessClosedReasons {
+    arBody
+    body
+    enBody
+    id
+  }
+}

@@ -1,0 +1,22 @@
+mutation UpdateRate(
+  $displayOrder: Int
+  $rateId: ID!
+  $isActive: Boolean
+  $arName: String
+  $enName: String
+  $isBarq: Boolean
+  $isInstantConfirmation: Boolean
+) {
+  updateRate(
+    displayOrder: $displayOrder
+    rateId: $rateId
+    isActive: $isActive
+    arName: $arName
+    enName: $enName
+    isBarq: $isBarq
+    isInstantConfirmation: $isInstantConfirmation
+  ) {
+    errors
+    status
+  }
+}

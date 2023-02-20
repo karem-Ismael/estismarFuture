@@ -1,0 +1,240 @@
+mutation AddCustomerMutation(
+  $businessCard: String
+  $cityId: ID
+  $clientMutationId: String
+  $companyName: String
+  $dob: String
+  # Driver license number
+  $driverLicense: String
+  $driverLicenseExpireAt: String
+  $email: String
+  $firstName: String
+  $gender: String
+  $isActive: Boolean!
+  $lastName: String
+  $licenseFrontImage: String
+  $licenseSelfieImage: String
+  $middleName: String
+  $mobile: String!
+  $nationalIdExpireAt: String
+  $nationalIdVersion: Int
+  $nationalityId: ID
+  $nid: String
+  $passportExpireAt: String
+  # IMAGE
+  $passportFrontImage: String
+  $passportNumber: String
+  # Can be visitor or citizen
+  $status: String
+  # Can be mr, mrs, ms or miss
+  $profileImage: String
+  # customerClass Can be [basic_member,bronze_member, gold_member, private_member]
+  $customerClass: String
+  $blockingStatus: BlockingStatus
+  $blockingAllies: [ID!]
+  $blockingReason: String
+  $nidImage:String
+  $visaImage:String 
+  $borderNumber:String
+) {
+  addCustomer(
+    input: {
+      businessCard: $businessCard
+      cityId: $cityId
+      clientMutationId: $clientMutationId
+      companyName: $companyName
+      dob: $dob
+      driverLicense: $driverLicense
+      driverLicenseExpireAt: $driverLicenseExpireAt
+      email: $email
+      firstName: $firstName
+      gender: $gender
+      isActive: $isActive
+      lastName: $lastName
+      licenseFrontImage: $licenseFrontImage
+      profileImage: $profileImage
+      licenseSelfieImage: $licenseSelfieImage
+      middleName: $middleName
+      mobile: $mobile
+      nationalIdExpireAt: $nationalIdExpireAt
+      nationalIdVersion: $nationalIdVersion
+      nationalityId: $nationalityId
+      nid: $nid
+      passportExpireAt: $passportExpireAt
+      passportFrontImage: $passportFrontImage
+      passportNumber: $passportNumber
+      status: $status
+      customerClass: $customerClass
+      blockingStatus: $blockingStatus
+      blockingAllies: $blockingAllies
+      blockingReason: $blockingReason
+      nidImage:$nidImage
+      visaImage:$visaImage
+      borderNumber:$borderNumber
+    }
+  ) {
+    clientMutationId
+    errors
+    status
+    user {
+      id
+    }
+  }
+}
+
+mutation EditCustomerMutation(
+  $userId: ID!
+  $businessCard: String
+  $cityId: ID
+  $clientMutationId: String
+  $companyName: String
+  $dob: String
+  # Driver license number
+  $driverLicense: String
+  $driverLicenseExpireAt: String
+  $email: String
+  $firstName: String
+  $gender: String
+  $isActive: Boolean!
+  $lastName: String
+  $licenseFrontImage: String
+  $licenseSelfieImage: String
+  $middleName: String
+  $mobile: String!
+  $nationalIdExpireAt: String
+  $nationalIdVersion: Int
+  $nationalityId: ID
+  $nid: String
+  $passportExpireAt: String
+  # IMAGE
+  $passportFrontImage: String
+  $passportNumber: String
+  # Can be visitor or citizen
+  $status: String
+  # Can be mr, mrs, ms or miss
+  $profileImage: String
+  #customerClass Can be [basic_member,bronze_member, gold_member, private_member]
+  $customerClass: String
+  $blockingStatus: BlockingStatus
+  $blockingAllies: [ID!]
+  $blockingReason: String
+  $nidImage:String
+  $visaImage:String 
+  $borderNumber:String
+) {
+  editCustomer(
+    input: {
+      userId: $userId
+      businessCard: $businessCard
+      cityId: $cityId
+      clientMutationId: $clientMutationId
+      companyName: $companyName
+      dob: $dob
+      profileImage: $profileImage
+      driverLicense: $driverLicense
+      driverLicenseExpireAt: $driverLicenseExpireAt
+      email: $email
+      firstName: $firstName
+      gender: $gender
+      isActive: $isActive
+      lastName: $lastName
+      licenseFrontImage: $licenseFrontImage
+      licenseSelfieImage: $licenseSelfieImage
+      middleName: $middleName
+      mobile: $mobile
+      nationalIdExpireAt: $nationalIdExpireAt
+      nationalIdVersion: $nationalIdVersion
+      nationalityId: $nationalityId
+      nid: $nid
+      passportExpireAt: $passportExpireAt
+      passportFrontImage: $passportFrontImage
+      passportNumber: $passportNumber
+      status: $status
+      customerClass: $customerClass
+      blockingStatus: $blockingStatus
+      blockingAllies: $blockingAllies
+      blockingReason: $blockingReason
+       nidImage:$nidImage
+  visaImage: $visaImage
+  borderNumber:$borderNumber
+    }
+  ) {
+    clientMutationId
+    errors
+    status
+    user {
+      id
+    }
+  }
+}
+
+mutation AddCustomersProfileImage($clientMutationId: String, $profileImage: String) {
+  profileImage(input: { clientMutationId: $clientMutationId, profileImage: $profileImage }) {
+    clientMutationId
+    errors
+    status
+    user {
+      id
+    }
+  }
+}
+
+mutation AddUser(
+  $email: String!
+  $firstName: String!
+  $isActive: Boolean!
+  $lastName: String!
+  $mobile: String!
+  $password: String!
+  $roles: [ID!]!
+) {
+  addUser(
+    input: {
+      email: $email
+      firstName: $firstName
+      isActive: $isActive
+      lastName: $lastName
+      mobile: $mobile
+      password: $password
+      roles: $roles
+    }
+  ) {
+    clientMutationId
+    errors
+    status
+    user {
+      id
+    }
+  }
+}
+
+mutation EditUser(
+  $id: ID
+  $email: String
+  $firstName: String
+  $lastName: String
+  $password: String
+  $mobile: String
+  $isActive: Boolean!
+  $roles: [ID!]!
+) {
+  editUser(
+    input: {
+      id: $id
+      email: $email
+      firstName: $firstName
+      lastName: $lastName
+      password: $password
+      mobile: $mobile
+      isActive: $isActive
+      roles: $roles
+    }
+  ) {
+    clientMutationId
+    errors
+    status
+    user {
+      id
+    }
+  }
+}

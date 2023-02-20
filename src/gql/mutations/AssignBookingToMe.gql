@@ -1,0 +1,6 @@
+mutation AssignRentalToMe($rentalId: ID!) {
+  assignRentalToMe(rentalId: $rentalId) {
+    errors
+    status
+  }
+}

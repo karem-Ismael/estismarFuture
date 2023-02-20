@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should render FormattedDate and have a formated pt date 1`] = `
+Array [
+  Object {
+    "dataRef": "bookingNo",
+    "dataType": "TEXT",
+    "headerId": "bookingNo.placeholder",
+  },
+  Object {
+    "dataRef": "customerName",
+    "dataType": "TEXT",
+    "headerId": "bookings.list.customerName",
+  },
+  Object {
+    "bilingual": Object {
+      "ar": "arAllyName",
+      "en": "enAllyName",
+    },
+    "dataType": "BILINGUAL",
+    "headerId": "bookings.list.allyName",
+  },
+  Object {
+    "bilingual": Object {
+      "ar": "arMakeName",
+      "en": "enMakeName",
+    },
+    "dataType": "FUNC",
+    "func": [Function],
+    "headerId": "car",
+  },
+  Object {
+    "dataRef": "numberOfDays",
+    "dataType": "TEXT",
+    "headerId": "bookings.list.numberOfDaysToBeRented",
+  },
+  Object {
+    "dataRef": "pricePerDay",
+    "dataType": "PRICE",
+    "headerId": "bookings.list.carRentPricePerDay",
+  },
+  Object {
+    "dataRef": "totalBookingPrice",
+    "dataType": "PRICE",
+    "headerId": "bookings.list.billingAmount",
+  },
+  Object {
+    "dataRef": "totalInsurancePrice",
+    "dataType": "PRICE",
+    "headerId": "bookings.list.paidAmount",
+  },
+  Object {
+    "dataRef": "pickUpDate",
+    "dataType": "FUNC",
+    "func": [Function],
+    "headerId": "bookings.list.pickup",
+  },
+  Object {
+    "dataRef": "pickUpDate",
+    "dataType": "FUNC",
+    "func": [Function],
+    "headerId": "bookings.list.delivery",
+  },
+  Object {
+    "dataRef": "status",
+    "dataType": "FUNC",
+    "func": [Function],
+    "headerId": "bookings.list.bookingStatus",
+  },
+  Object {
+    "dataType": "ACTIONS",
+    "headerId": "common.actions",
+  },
+]
+`;

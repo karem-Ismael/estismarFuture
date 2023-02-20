@@ -1,0 +1,79 @@
+query AllyManagers(
+  $limit: Int
+  $page: Int
+  $allyIds: [ID!]
+  $mobile: String
+  $isActive: Boolean
+  $firstName: String
+  $email: String
+  $isDeleted :Boolean
+) {
+  allyManagers(
+    limit: $limit
+    page: $page
+    mobile: $mobile
+    allyIds: $allyIds
+    isActive: $isActive
+    firstName: $firstName
+    email: $email
+    isDeleted:$isDeleted
+  ) {
+    collection {
+    
+     allyId
+      bankAccountBankName
+      bankAccountBranchCity
+      bankAccountFullName
+      bankAccountIban
+      branches
+      companyHasBusinessRentals
+      companyHasBusinessRequests
+      companyName
+      createdAt
+      dob
+      email
+      firstName
+      gender
+      id
+      idPhoto
+      isAllyManager
+      isCompanyB2b
+      isDeleted
+      jurisdictionAreas{
+         arName
+    enName
+    id
+    name
+      }
+      lastName
+      locale
+      middleName
+      name
+      nationalId
+      nationality
+      passportNum
+      region{
+         arName
+    displayOrder
+    enName
+    id
+    name
+      }
+      regionId
+      town
+      user{
+         createdAt
+    id
+    isActive
+    mobile
+    profileImage
+      }
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

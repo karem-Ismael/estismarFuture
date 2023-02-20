@@ -1,0 +1,96 @@
+query AllyCars(
+  $allyName: String
+  $availabilityStatus: Boolean
+  $branchName: String
+  $dailyPrice: Float
+  $limit: Int
+  $page: Int
+  $transmission: String
+  $vehicleType: ID
+  $model: ID
+  $make: ID
+  $allyId: ID
+  $branchId: ID
+  $year: Int
+  $dropOffLocationId: ID
+  $pickUpLocationId: ID
+  $sortBy: String
+) {
+  allyCars(
+    allyName: $allyName
+    availabilityStatus: $availabilityStatus
+    branchName: $branchName
+    dailyPrice: $dailyPrice
+    limit: $limit
+    page: $page
+    transmission: $transmission
+    vehicleType: $vehicleType
+    model: $model
+    make: $make
+    allyId: $allyId
+    branchId: $branchId
+    year: $year
+    dropOffLocationId: $dropOffLocationId
+    pickUpLocationId: $pickUpLocationId
+    sortBy: $sortBy
+  ) {
+    collection {
+      allyName
+      #arAllyName
+      #arMakeName
+      #arModelName
+      #arVehicleName
+      availabilityStatus
+      branch {
+        id
+        arName
+        enName
+        allyCompany {
+          arName
+          enName
+        }
+        area {
+          id
+          name
+        }
+      }
+      id
+      carModelId
+      carVersionId
+      createdAt
+      dailyPrice
+      #enAllyName
+      #enMakeName
+      #enModelName
+      #enVehicleName
+      makeId
+      #makeName
+      #modelName
+      monthlyPrice
+      transmission
+      transmissionName
+      #vehicleName
+      weeklyPrice
+      year
+      make {
+        arName
+        enName
+      }
+      carModel {
+        arName
+        enName
+      }
+      carVersion {
+        arName
+        enName
+      }
+      carsCount
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

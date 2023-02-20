@@ -1,0 +1,404 @@
+query GetBookingsQuery(
+  $page: Int
+  $limit: Int
+  $from: String
+  $customerName: String
+  $bookingNo: String
+  $to: String
+  $cityName: String
+  $makeName: String
+  $allyName: String
+  $status: String
+  $subStatus: String
+  $customerMobile: String
+  $userId: ID
+  $userNid: String
+  $paymentMethod: String
+  $paymentStatusFilter: PaymentStatusFilter
+  $orderBy: String
+  $sortBy: String
+  $pickUpDate: String
+  $pickUpDateFrom: String
+  $dropOffDate: String
+  $dropOffDateTo: String
+  $couponId: String
+) {
+  dashboardRentals(
+    page: $page
+    limit: $limit
+    allyName: $allyName
+    bookingNo: $bookingNo
+    cityName: $cityName
+    customerName: $customerName
+    from: $from
+    makeName: $makeName
+    status: $status
+    subStatus: $subStatus
+    to: $to
+    customerMobile: $customerMobile
+    userId: $userId
+    userNid: $userNid
+    paymentMethod: $paymentMethod
+    paymentStatusFilter: $paymentStatusFilter
+    orderBy: $orderBy
+    sortBy: $sortBy
+    pickUpDate: $pickUpDate
+    pickUpDateFrom: $pickUpDateFrom
+    dropOffDate: $dropOffDate
+    dropOffDateTo: $dropOffDateTo
+    couponId: $couponId
+  ) {
+    collection {
+      id
+      assignedBy
+      assignedTo
+      bookingNo
+      userId
+      allyCompanyId
+      couponDiscount
+      totalBookingPrice
+      branchName
+      totalInsurancePrice
+      pickUpDate
+      dropOffDate
+      enMakeName
+      arMakeName
+      arModelName
+      dropOffTime
+      pickUpTime
+      enModelName
+      enVersionName
+      arVersionName
+      year
+      hasPendingExtensionRequests
+      lastRentalDateExtensionRequest {
+        id
+        dropOffDate
+        dropOffTime
+        isPaid
+        status
+        requestNo
+        extensionDays
+        totalRemainingPrice
+      }
+      pendingExtensionRequest {
+        id
+        dropOffDate
+        dropOffTime
+        isPaid
+        status
+        requestNo
+        extensionDays
+        totalRemainingPrice
+      }
+      isIntegratedRental
+      enPickUpCityName
+      arPickUpCityName
+      enDropOffCityName
+      arDropOffCityName
+      status
+      subStatus
+      numberOfDays
+      enAllyName
+      arAllyName
+      pricePerDay
+      customerName
+      createdAt
+      paymentMethod
+      is24Passed
+      isPaid
+      refundable
+      refundedAt
+    }
+    metadata {
+      currentPage
+      totalCount
+    }
+  }
+}
+
+query GetRentalDetailsQuery($id: ID!) {
+  rentalDetails(id: $id) {
+    isPaid
+    addsPrice
+    allyCompanyId
+    allyRate
+    allyRentalRate
+    arAllyName
+    arDropOffCityName
+    arMakeName
+    arModelName
+    arPickUpCityName
+    arVersionName
+    bookingNo
+    branchId
+    dropOffBranchId
+    handoverLat
+    couponId
+    handoverLng
+    handoverPrice
+    cancelledReason
+    carId
+    paymentBrand
+    invoicedAt
+    note
+    carImage
+    customerMobile
+    customerName
+    customerProfileImage
+    customerRate
+    customerRentalRate
+    dailyPrice
+    couponId
+    couponCode
+    couponDiscount
+    deliverAddress
+    deliverType
+    deliverLat
+    deliverLng
+    insuranceId
+    deliveryPrice
+    discountPercentage
+    rentalIntegrationResponse
+    isIntegratedRental
+    rentalIntegrationErrorMessage
+    discountType
+    discountValue
+    dropOffCityId
+    dropOffCityName
+    dropOffDate
+    dropOffTime
+    enAllyName
+    enDropOffCityName
+    enMakeName
+    rentalIntegrationStatus
+    enModelName
+    enPickUpCityName
+    enVersionName
+    id
+    insuranceIncluded
+    invoicePic
+    makeName
+    modelName
+    newGrandTotal
+    numberOfDays
+    paymentMethod
+    pickUpCityId
+    pickUpCityName
+    pickUpDate
+    pickUpTime
+    priceBeforeDiscount
+    priceBeforeInsurance
+    priceBeforeTax
+    pricePerDay
+    refundedAmount
+    refundedAt
+    refundedBy
+    status
+    statusLocalized
+    subStatus
+    subStatusLocalized
+    suggestedPrice
+    taxValue
+    totalBookingPrice
+    totalInsurancePrice
+    userId
+    valueAddedTaxPercentage
+    versionName
+    year
+    isUnlimited
+    isUnlimitedFree
+    unlimitedFeePerDay
+    totalUnlimitedFee
+    rentalExtraServices {
+      arDescription
+      arSubtitle
+      arTitle
+      description
+      enDescription
+      enSubtitle
+      enTitle
+      extraServiceId
+      extraServiceType
+      iconUrl
+      id
+      isRequired
+      payType
+      rentalId
+      serviceValue
+      subtitle
+      title
+      totalServiceValue
+    }
+    hasPendingExtensionRequests
+    pendingExtensionRequest {
+      createdAt
+      dropOffDate
+      dropOffTime
+      extensionDays
+      id
+      isPaid
+      paymentMethod
+      requestNo
+      status
+      statusLocalized
+      totalRemainingPrice
+    }
+    lastRentalDateExtensionRequest {
+      id
+      dropOffDate
+      dropOffTime
+      isPaid
+      status
+      requestNo
+      extensionDays
+      totalRemainingPrice
+      statusLocalized
+      paymentMethod
+    }
+    walletTransactions{
+      amount
+    }
+    rentalDateExtensionRequests {
+      createdAt
+      dropOffDate
+      dropOffTime
+      canSendExtensionToAlly
+      extensionDays
+      id
+      isPaid
+      paymentMethod
+      isPaid
+      requestNo
+      status
+      statusLocalized
+      totalRemainingPrice
+      refundable
+    }
+    rentalRejectedBaskets {
+      arAllyName
+      enAllyName
+      rejectedReasons {
+        arBody
+        enBody
+      }
+    }
+  }
+}
+
+query GetRentPrice(
+  $carId: ID!
+  $deliverLat: Float
+  $deliverLng: Float
+  # Can be no_delivery, one_way or two_ways
+  $deliveryType: String
+  $deliveryPrice: Float
+  $handoverPrice: Float
+  $handoverBranchPrice: Float
+  $handoverBranch: ID
+  $dropOffDate: String!
+  $dropOffTime: String!
+  $insuranceId: ID!
+  $pickUpDate: String!
+  $pickUpTime: String!
+  $allyExtraServices: [ID!]
+  $branchExtraServices: [ID!]
+  $couponId: ID
+  $isUnlimited: Boolean
+  $usedPrice: Float
+  $withWallet:Boolean
+) {
+  aboutRentPrice(
+    carId: $carId
+    deliverLat: $deliverLat
+    deliverLng: $deliverLng
+    deliveryPrice: $deliveryPrice
+    handoverPrice: $handoverPrice
+    handoverBranchPrice: $handoverBranchPrice
+    handoverBranch: $handoverBranch
+    deliveryType: $deliveryType
+    dropOffDate: $dropOffDate
+    dropOffTime: $dropOffTime
+    insuranceId: $insuranceId
+    pickUpDate: $pickUpDate
+    pickUpTime: $pickUpTime
+    allyExtraServices: $allyExtraServices
+    branchExtraServices: $branchExtraServices
+    couponId: $couponId
+    isUnlimited: $isUnlimited
+    usedPrice: $usedPrice
+    withWallet:$withWallet
+  ) {
+    addsPrice
+    dailyPrice
+    handoverPrice
+    deliveryPrice
+    discountPercentage
+    discountType
+    discountValue
+    insuranceIncluded
+    insuranceValue
+    numberOfDays
+    priceBeforeDiscount
+    priceBeforeInsurance
+    priceBeforeTax
+    couponDiscount
+    couponCode
+    pricePerDay
+    taxValue
+    totalPrice
+    totalExtraServicesPrice
+    valueAddedTaxPercentage
+    isUnlimited
+    isUnlimitedFree
+    unlimitedFeePerDay
+    totalUnlimitedFee
+    allyExtraServices {
+      allyCompanyId
+
+      arSubtitle
+
+      enSubtitle
+      extraServiceId
+      id
+      isActive
+      isRequired
+      payType
+      serviceValue
+      showFor
+      subtitle
+      totalServiceValue
+    }
+    branchExtraServices {
+      allyExtraServiceId
+      arSubtitle
+      branchId
+      enSubtitle
+      id
+      isActive
+      isRequired
+      payType
+      serviceValue
+      subtitle
+      totalServiceValue
+    }
+  }
+}
+
+query RentalExtensionRequestPrice(
+  $rentalId: ID!
+  $dropOffDate: String!
+  $dropOffTime: String!
+  $paymentMethod: PaymentMethod
+) {
+  rentalExtensionRequestPrice(
+    rentalId: $rentalId
+    dropOffDate: $dropOffDate
+    dropOffTime: $dropOffTime
+    paymentMethod: $paymentMethod
+  ) {
+    extensionDays
+    pricePerDay
+    totalRemainingPrice
+  }
+}

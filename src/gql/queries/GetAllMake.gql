@@ -1,0 +1,10 @@
+query Makes($limit: Int, $page: Int) {
+  makes(limit: $limit, page: $page) {
+    collection {
+      id
+      name
+      arName
+      enName
+    }
+  }
+}

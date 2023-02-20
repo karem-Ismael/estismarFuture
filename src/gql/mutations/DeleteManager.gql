@@ -1,0 +1,7 @@
+mutation DeleteAllyManager($input: DeleteAllyManagerInput!) {
+  deleteAllyManager(input: $input) {
+    clientMutationId
+    errors
+    status
+  }
+}

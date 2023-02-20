@@ -1,0 +1,22 @@
+mutation CreateCarVersion(
+  $carModelId: ID!
+  $image: String
+  $images: [String!]
+  $year: Int!
+  $features: [ID!]
+  $isActive: Boolean!
+  $vehicleTypeId: ID!
+) {
+  createCarVersion(
+    carModelId: $carModelId
+    image: $image
+    images: $images
+    year: $year
+    features: $features
+    isActive: $isActive
+    vehicleTypeId: $vehicleTypeId
+  ) {
+    errors
+    status
+  }
+}

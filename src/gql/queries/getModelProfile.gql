@@ -1,0 +1,12 @@
+query CarModel($id: ID!) {
+  carModel(id: $id) {
+    name
+    id
+    make {
+      name
+      arName
+      enName
+      status
+    }
+  }
+}

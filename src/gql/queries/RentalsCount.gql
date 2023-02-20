@@ -1,0 +1,11 @@
+query RentalsCount($userId: ID) {
+  rentalsCount(userId: $userId) {
+    all
+  }
+}
+
+query BusinessRentalsCount {
+  businessRentalsCount {
+    all
+  }
+}

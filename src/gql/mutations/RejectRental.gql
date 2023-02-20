@@ -1,0 +1,6 @@
+mutation RejectRental($rejectedReasons: [ID!]!, $rentalId: ID!) {
+  rejectRental(rejectedReasons: $rejectedReasons, rentalId: $rentalId) {
+    errors
+    status
+  }
+}

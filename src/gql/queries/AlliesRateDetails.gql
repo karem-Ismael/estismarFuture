@@ -1,0 +1,11 @@
+query Rate($id: ID!) {
+  rate(id: $id) {
+    arName
+    enName
+    displayOrder
+    id
+    isActive
+       isBarq
+    isInstantConfirmation
+  }
+}

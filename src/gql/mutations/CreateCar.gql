@@ -1,0 +1,48 @@
+mutation CreateCar(
+  $accidentPenalty: Float!
+  $additionalDistanceCost: Float!
+  $availabilityStatus: Boolean
+  $branches: [CarBranchAttributes!]!
+  $carFeatureAttributes: [ID!]
+  $carInsuranceAttributes: [CarInsuranceAttributes!]!
+  $carModelId: ID!
+  $carVersionId: ID!
+  $dailyPrice: Float!
+  $deliverToCustomerLocationCost: Float
+  $distanceByDay: Float
+  $makeId: ID!
+  $monthlyPrice: Float
+  $transmission: Transmission!
+  $weeklyPrice: Float!
+  $isUnlimited: Boolean!
+  $isUnlimitedFree: Boolean
+  $unlimitedFeePerDay: Float
+  $monthsPrice: MonthsPriceInput
+  $referenceCode: String
+) {
+  createCar(
+    accidentPenalty: $accidentPenalty
+    additionalDistanceCost: $additionalDistanceCost
+    availabilityStatus: $availabilityStatus
+    branches: $branches
+    carFeatureAttributes: $carFeatureAttributes
+    carInsuranceAttributes: $carInsuranceAttributes
+    carModelId: $carModelId
+    carVersionId: $carVersionId
+    dailyPrice: $dailyPrice
+    deliverToCustomerLocationCost: $deliverToCustomerLocationCost
+    distanceByDay: $distanceByDay
+    makeId: $makeId
+    monthlyPrice: $monthlyPrice
+    transmission: $transmission
+    weeklyPrice: $weeklyPrice
+    isUnlimited: $isUnlimited
+    isUnlimitedFree: $isUnlimitedFree
+    unlimitedFeePerDay: $unlimitedFeePerDay
+    monthsPrice: $monthsPrice
+    referenceCode: $referenceCode
+  ) {
+    errors
+    status
+  }
+}

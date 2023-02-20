@@ -1,0 +1,30 @@
+mutation CreateExtraService(
+  $arDescription: String!
+  $arTitle: String!
+  $enDescription: String!
+  $enTitle: String!
+  $isActive: Boolean
+  $payType: String!
+  $iconUrl: String
+  $isDisplayed: Boolean
+  $displayOrder: Int
+  $isSpecial: Boolean
+  $homepageIconUrl: String
+) {
+  createExtraService(
+    arDescription: $arDescription
+    arTitle: $arTitle
+    enDescription: $enDescription
+    enTitle: $enTitle
+    isActive: $isActive
+    payType: $payType
+    iconUrl: $iconUrl
+    isDisplayed: $isDisplayed
+    displayOrder: $displayOrder
+    isSpecial: $isSpecial
+    homepageIconUrl: $homepageIconUrl
+  ) {
+    errors
+    status
+  }
+}

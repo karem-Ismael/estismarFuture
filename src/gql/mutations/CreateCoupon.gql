@@ -1,0 +1,43 @@
+
+mutation CreateCoupons($allyCompanyIds:[ID!],$paymentMethod:CouponPaymentMethod,$branchIds:[ID!],$carVersionIds:[ID!],$minRentDays:Int,$minRentPrice:Int,$numOfDays:Int,$cityIds:[ID!],$code:String!,$discountType: Discount!,$discountValue: Float!,$expireAt: String,$maxLimitValue: Float,$numOfUsages:Int!,$numOfUsagesPerUser: Int!,$startAt: String!) {
+  createCoupon(
+    allyCompanyIds: $allyCompanyIds
+    cityIds:$cityIds
+    code: $code
+    discountType: $discountType
+    discountValue: $discountValue
+    expireAt: $expireAt
+    maxLimitValue:$maxLimitValue
+    numOfUsages: $numOfUsages
+    numOfUsagesPerUser: $numOfUsagesPerUser
+    startAt: $startAt
+    branchIds:$branchIds
+    carVersionIds:$carVersionIds
+    minRentDays:$minRentDays
+    numOfDays:$numOfDays
+    minRentPrice:$minRentPrice
+    paymentMethod:$paymentMethod
+  ) {
+    coupon {
+      allyCompanies{
+        arName
+        enName
+      }
+      areas{
+        arName
+        enName
+      }
+      code
+      discountType
+      discountValue
+      expireAt
+      id
+      maxLimitValue
+      numOfUsages
+      numOfUsagesPerUser
+      startAt
+    }
+    errors
+    status
+  }
+}

@@ -1,0 +1,12 @@
+mutation BankTransferRefund($rentalId:ID!,$amount:Float){
+  bankTransferRefund(rentalId:$rentalId, amount: $amount) {
+    rental{
+      id
+      refundable
+      refundedAt
+      refundedAmount
+      paymentStatusCode
+      paymentStatusMessage
+    }
+  }
+}

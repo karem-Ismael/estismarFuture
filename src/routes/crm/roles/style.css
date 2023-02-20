@@ -1,0 +1,9 @@
+.rtl * td {
+  padding-right: 14px !important;
+}
+td {
+  padding-left: 8px !important ;
+}
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+  transform: translate(27px, -6px) scale(0.75) !important;
+}

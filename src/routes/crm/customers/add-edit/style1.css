@@ -1,0 +1,34 @@
+
+.astrik{
+    position: relative !important;
+}
+
+ .astrik:after{
+content: "*" ;
+color: red ;
+left: 150px;
+position: absolute;
+
+}
+body.rtl .astrik:after{
+    content: "*" !important;
+    color: red !important;
+    right: 170px;
+    position: absolute;
+    
+    }
+    .form-control{
+        width: 100% !important;
+        /* height: 100% !important; */
+    }
+    .react-tel-input .country-list {
+        width: 190px !important;
+        overflow: auto !important;
+    }
+#ally-companies-customer .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
+    padding: 0 !important;
+    overflow: auto;
+}
+body.rtl .date .MuiInputLabel-outlined.MuiInputLabel-shrink {
+    transform: translate(58px, -6px) scale(0.75);
+}

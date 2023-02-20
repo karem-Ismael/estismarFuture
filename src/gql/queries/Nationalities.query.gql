@@ -1,0 +1,8 @@
+query GetNationalities($isGulf:Boolean) {
+  nationalities(isGulf:$isGulf) {
+    arName
+    enName
+    id
+    name
+  }
+}

@@ -1,0 +1,9 @@
+query Banner($id: ID!) {
+  banner(id: $id) {
+    displayOrder
+    id
+    imgAr
+    imgEn
+    isActive
+  }
+}

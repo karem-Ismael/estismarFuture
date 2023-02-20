@@ -1,0 +1,40 @@
+mutation BulkUpdateCars(
+  $accidentPenalty: Float
+  $additionalDistanceCost: Float
+  $carIds: [ID!]!
+  $carInsuranceAttributes: [CarInsuranceAttributes!]
+  $dailyPrice: Float
+  $distanceByDay: Float
+  $distanceByMonth: Float
+  $distanceByWeek: Float
+  $isUnlimited: Boolean
+  $isUnlimitedFree: Boolean
+  $monthlyInsurancePerDay: Float
+  $monthlyPrice: Float
+  $monthsPrice: MonthsPriceInput
+  $unlimitedFeePerDay: Float
+  $weeklyPrice: Float
+  $referenceCode: String
+) {
+  bulkUpdateCars(
+    accidentPenalty: $accidentPenalty
+    additionalDistanceCost: $additionalDistanceCost
+    carIds: $carIds
+    carInsuranceAttributes: $carInsuranceAttributes
+    dailyPrice: $dailyPrice
+    distanceByDay: $distanceByDay
+    distanceByMonth: $distanceByMonth
+    distanceByWeek: $distanceByWeek
+    isUnlimited: $isUnlimited
+    isUnlimitedFree: $isUnlimitedFree
+    monthlyInsurancePerDay: $monthlyInsurancePerDay
+    monthlyPrice: $monthlyPrice
+    monthsPrice: $monthsPrice
+    unlimitedFeePerDay: $unlimitedFeePerDay
+    weeklyPrice: $weeklyPrice
+    referenceCode: $referenceCode
+  ) {
+    errors
+    status
+  }
+}

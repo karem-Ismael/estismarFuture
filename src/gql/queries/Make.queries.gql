@@ -1,0 +1,15 @@
+query GetMakesQuery($page: Int, $limit: Int) {
+  makes(page: $page, limit: $limit) {
+    collection {
+      id
+      arName
+      enName
+      logo
+      status
+    }
+    metadata {
+      currentPage
+      totalCount
+    }
+  }
+}

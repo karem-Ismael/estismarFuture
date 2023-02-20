@@ -1,0 +1,17 @@
+query AllyExtraServices($allyCompanyId: ID!) {
+  allyExtraServices(allyCompanyId: $allyCompanyId) {
+    allyCompanyId
+    extraService {
+      arTitle
+      enTitle
+    }
+    extraServiceId
+    id
+    isActive
+    isRequired
+    payType
+    serviceValue
+    showFor
+    totalServiceValue
+  }
+}

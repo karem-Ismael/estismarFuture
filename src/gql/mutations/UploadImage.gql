@@ -1,0 +1,12 @@
+mutation ImageUpload($image: String!, $topic: String!) {
+  imageUpload(image: $image, topic: $topic) {
+    imageUpload {
+      id
+      imageUrl
+      topic
+      userId
+    }
+    errors
+    status
+  }
+}

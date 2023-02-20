@@ -1,0 +1,7 @@
+mutation DeleteRole($input: DeleteRoleInput!) {
+  deleteRole(input: $input) {
+    clientMutationId
+    errors
+    status
+  }
+}

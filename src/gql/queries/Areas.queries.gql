@@ -1,0 +1,25 @@
+query AllAreas {
+  areas {
+    id
+    arName
+    enName
+    centerLat
+    centerLng
+   
+    isAirport
+    name
+  }
+}
+
+query AreasWithBranchesQuery {
+  areas {
+    id
+    arName
+    enName
+    centerLat
+    centerLng
+   
+    isAirport
+    name
+  }
+}

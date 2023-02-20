@@ -1,0 +1,16 @@
+.gm-style-iw .gm-style-iw-c {
+  top: 70px !important;
+}
+.gm-style .gm-style-iw-t::after {
+  background: none;
+}
+.gm-style .gm-style-iw-c {
+  top: 70px !important;
+}
+.map #autocomplete {
+  z-index: 100;
+  position: absolute;
+  top: 32px;
+  right: 83px;
+  max-width: 450px;
+}

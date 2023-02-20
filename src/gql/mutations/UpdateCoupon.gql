@@ -1,0 +1,56 @@
+
+mutation UpdateCoupon 
+($allyCompanyIds:[ID!],$cityIds:[ID!],$code:String,$discountType: Discount,$discountValue: Float,
+$expireAt: String,$maxLimitValue: Float,$numOfUsages:Int,$numOfUsagesPerUser: Int,$startAt: String,
+$couponId:ID!,
+ $branchIds:[ID!],
+ $carVersionIds:[ID!],
+ $minRentDays: Int,
+ $minRentPrice: Int, 
+ $numOfDays: Int,
+ $paymentMethod:CouponPaymentMethod
+ $isActive:Boolean
+)
+{
+  updateCoupon(
+    allyCompanyIds:$allyCompanyIds
+    cityIds: $cityIds
+    code: $code
+    couponId: $couponId
+    discountType:$discountType
+    discountValue:$discountValue
+    expireAt:$expireAt
+    maxLimitValue:$maxLimitValue
+    numOfUsages: $numOfUsages
+    numOfUsagesPerUser: $numOfUsagesPerUser
+    startAt:$startAt
+    branchIds:$branchIds
+    carVersionIds:$carVersionIds
+    minRentDays:$minRentDays 
+    minRentPrice:$minRentPrice
+    numOfDays:$numOfDays
+    paymentMethod:$paymentMethod
+    isActive:$isActive
+  ) {
+    coupon {
+      allyCompanies{
+        id
+      }
+      areas{
+        id
+      }
+      code
+      discountType
+      discountValue
+      expireAt
+      generalTerms
+      id
+      maxLimitValue
+      numOfUsages
+      numOfUsagesPerUser
+      startAt
+    }
+    errors
+    status
+  }
+}

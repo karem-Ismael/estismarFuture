@@ -1,0 +1,73 @@
+query CouponDetails($id:ID!)
+{
+  couponDetails(id:$id) {
+    allyCompanies {
+      addedBy
+      address
+      allyClass
+      allyRateId
+      arName
+      bankCardImage
+      canHandoverInAntherCity
+      commercialRegestration
+      commercialRegistrationImage
+      commisionRate
+      conditions
+      email
+      enName
+      features
+      id
+      isActive
+      isApiIntegrated
+      isB2b
+      isB2c
+      isDeliveryOnlinePay
+      isOnlinePayEnable
+      lat
+      licenceImage
+      lng
+      logo
+      lonlat
+      managerName
+      name
+      officeNumber
+    
+      phoneNumber
+      rate
+      updatedBy
+    }
+    areas {
+      arName
+      
+      centerLat
+      centerLng
+      enName
+      id
+      isAirport
+      name
+      order
+      timezone
+    }
+    code
+    discountType
+    discountTypeKey
+    discountValue
+    expireAt
+    generalTerms
+    id
+    carVersions{
+      id
+    }
+    branches{
+      id
+    }
+    maxLimitValue
+    paymentMethod
+    minRentDays
+    minRentPrice
+    numOfDays
+    numOfUsages
+    numOfUsagesPerUser
+    startAt
+  }
+}

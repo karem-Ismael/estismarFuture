@@ -1,0 +1,8 @@
+query Airports($areaId: Int, $name: String) {
+  airports(areaId: $areaId, name: $name) {
+    arName
+    enName
+    id
+    name
+  }
+}

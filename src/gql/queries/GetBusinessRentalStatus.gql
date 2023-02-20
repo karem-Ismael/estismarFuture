@@ -1,0 +1,8 @@
+query GetStatus($id: ID!) {
+  businessRentalDetails(id: $id) {
+    status
+    pickUpDatetime
+    bookingNo
+    statusLocalized
+  }
+}

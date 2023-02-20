@@ -1,0 +1,33 @@
+
+mutation  RefundExtension(
+    $amount:Float!
+    $rentalDateExtensionRequestId:ID!
+){
+  refundExtension(amount:$amount, rentalDateExtensionRequestId:$rentalDateExtensionRequestId) {
+    errors
+    rentalDateExtensionRequest {
+    #   canCancel
+    #   canSendExtensionToAlly
+    #   createdAt
+    #   dropOffDate
+    #   dropOffTime
+    #   extensionDays
+    #   extensionRequestIntegrationResponse
+    #   extensionRequestIntegrationStatus
+         id
+    #   isPaid
+    #   paidAt
+    #   paymentMethod
+    #   paymentStatusCode
+    #   pickUpDate
+    #   pickUpTime
+    #   refundable
+    #   rental
+    #   requestNo
+    #   status
+    #   statusLocalized
+    #   totalRemainingPrice
+    }
+    status
+  }
+}

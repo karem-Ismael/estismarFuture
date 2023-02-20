@@ -1,0 +1,6 @@
+mutation BulkActivateCars($availabilityStatus: Boolean!, $carIds: [ID!]!) {
+  bulkActivateCars(availabilityStatus: $availabilityStatus, carIds: $carIds) {
+    errors
+    status
+  }
+}

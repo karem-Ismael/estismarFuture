@@ -1,0 +1,25 @@
+
+mutation ConfirmRentalDateExtensionRequest($dropOffDate:String,$dropOffTime:String,$rentalExtensionId:ID!) {
+  confirmRentalDateExtensionRequest(
+    dropOffDate: $dropOffDate
+    dropOffTime:$dropOffTime
+    rentalExtensionId: $rentalExtensionId
+  ) {
+    errors
+    rentalDateExtensionRequest {
+      createdAt
+      dropOffDate
+      dropOffTime
+      extensionDays
+      id
+      isPaid
+      paymentMethod
+    
+      requestNo
+      status
+      statusLocalized
+      totalRemainingPrice
+    }
+    status
+  }
+}

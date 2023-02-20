@@ -1,0 +1,16 @@
+mutation AllyReceiveCar($invoicePic: String, $newGrandTotal: Float, $rentalId: ID!) {
+  allyReceiveCar(invoicePic: $invoicePic, newGrandTotal: $newGrandTotal, rentalId: $rentalId) {
+    errors
+    status
+  }
+}
+mutation InvoiceBusinessRental($invoicePic: String, $newGrandTotal: Float, $businessRentalId: ID!) {
+  invoiceBusinessRental(
+    invoicePic: $invoicePic
+    newGrandTotal: $newGrandTotal
+    businessRentalId: $businessRentalId
+  ) {
+    errors
+    status
+  }
+}

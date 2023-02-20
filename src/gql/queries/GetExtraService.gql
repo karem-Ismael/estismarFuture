@@ -1,0 +1,16 @@
+query ExtraService($id: ID!) {
+  extraService(id: $id) {
+    arDescription
+    arTitle
+    enDescription
+    enSubtitle
+    enTitle
+    id
+    isActive
+    payType
+    iconUrl
+    isDisplayed
+    isSpecial
+    homepageIconUrl
+  }
+}

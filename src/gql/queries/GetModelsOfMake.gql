@@ -1,0 +1,12 @@
+query ModelsOfMake($id: ID!) {
+  make(id: $id) {
+    id
+    carModels {
+      name
+      arName
+      enName
+      name
+      id
+    }
+  }
+}

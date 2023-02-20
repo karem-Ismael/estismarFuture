@@ -1,0 +1,15 @@
+query CompaniesName($limit: Int, $page: Int) {
+  allyCompanies(limit: $limit, page: $page) {
+    collection {
+      arName
+      enName
+      id
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

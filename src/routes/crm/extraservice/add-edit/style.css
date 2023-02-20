@@ -1,0 +1,10 @@
+.MuiInputLabel-shrink {
+  transform: translate(14px, -8px) !important ;
+  margin-right: 25px !important;
+  /* margin-left: 20px !important;   */
+  /* right: 15px; */
+}
+
+.rtl legend {
+  width: 125px !important;
+}

@@ -1,0 +1,6 @@
+mutation DeleteFeature($featureId: ID!) {
+  deleteFeature(featureId: $featureId) {
+    errors
+    status
+  }
+}

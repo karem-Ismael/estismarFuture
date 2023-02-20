@@ -1,0 +1,26 @@
+query RolesList($limit: Int, $page: Int, $sortBy: String) {
+  roles(limit: $limit, page: $page, sortBy: $sortBy) {
+    collection {
+      arDescription
+      arName
+      description
+      enDescription
+      enName
+      id
+      isActive
+      name
+      privileges {
+        feature
+        id
+        name
+        nameLocalized
+      }
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

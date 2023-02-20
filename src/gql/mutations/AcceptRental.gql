@@ -1,0 +1,6 @@
+mutation AcceptRent($rentalId: ID!) {
+  acceptRental(rentalId: $rentalId) {
+    errors
+    status
+  }
+}

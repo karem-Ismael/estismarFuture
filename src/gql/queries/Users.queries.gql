@@ -1,0 +1,344 @@
+fragment Roles on Profile {
+  roles {
+    arName
+    enName
+    id
+  }
+}
+
+fragment BasicUserDetails on Profile {
+  email
+  firstName
+  isActive
+  lastName
+  status
+}
+
+# Related to UsersList
+# Used In src/routes/crm/users/Users.js
+query GetCustomerCareUsersList(
+  $email: String
+  $isActive: Boolean
+  $limit: Int
+  $mobile: String
+  $nid: String
+  $name: String
+  $page: Int
+  $type: String
+) {
+  users(
+    email: $email
+    isActive: $isActive
+    limit: $limit
+    mobile: $mobile
+    nid: $nid
+    name: $name
+    page: $page
+    type: $type
+  ) {
+    collection {
+      ...BasicUserDetails
+      ...Roles
+      id
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}
+
+query GetUsers(
+  $email: String
+  $isActive: Boolean
+  $limit: Int
+  $mobile: String
+  $nid: String
+  $name: String
+  $page: Int
+  $type: String
+) {
+  users(
+    email: $email
+    isActive: $isActive
+    limit: $limit
+    mobile: $mobile
+    nid: $nid
+    name: $name
+    page: $page
+    type: $type
+  ) {
+    collection {
+      customerProfile {
+        businessCard
+        city {
+          arName
+          enName
+          id
+          name
+        }
+        companyName
+        dob
+        driverLicense
+        driverLicenseExpireAt
+        driverLicenseStatus
+        email
+        firstName
+        gender
+        lastName
+        licenseFrontImage
+        licenseSelfieImage
+        middleName
+        name
+        nationalIdExpireAt
+        nationalIdVersion
+        nationality {
+          arName
+          enName
+          id
+          name
+        }
+        nid
+        passportExpireAt
+        passportFrontImage
+        passportNumber
+        status
+        title
+      }
+      companyName
+      createdAt
+      driverLicense
+      driverLicenseExpireAt
+      driverLicenseStatus
+      email
+      emailConfirmed
+      firstName
+      gender
+      id
+      dob
+      isActive
+      isCustomerProfileCompleted
+      lastName
+      lat
+      licenseFrontImage
+      licenseSelfieImage
+      lng
+      middleName
+      mobile
+      name
+      nid
+      passportNumber
+      profileImage
+      status
+      title
+      roles {
+        arName
+        enName
+        id
+      }
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}
+query GetUsersList(
+  $email: String
+  $isActive: Boolean
+  $limit: Int
+  $mobile: String
+  $nid: String
+  $name: String
+  $page: Int
+  $type: String
+  $blockingStatus:BlockingStatus
+  # $isDeletedCustomer: Boolean
+) {
+  users(
+    email: $email
+    isActive: $isActive
+    limit: $limit
+    mobile: $mobile
+    nid: $nid
+    name: $name
+    page: $page
+    type: $type
+    blockingStatus:$blockingStatus
+    # isDeletedCustomer:$isDeletedCustomer
+  ) {
+    collection {
+      
+      createdAt
+      email
+      firstName
+      gender
+      id
+      isActive
+      isCustomerProfileCompleted
+      lastName
+
+      middleName
+      mobile
+      name
+      status
+      
+      roles {
+        arName
+        enName
+        id
+      }
+      customerProfile{
+          blockingStatus
+          # isDeleted
+      }
+      # customerProfileWithDeleted{
+      #   isDeleted
+      # }
+      
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}
+query GetCustomerDetailsQuery($id: ID!) {
+  user(id: $id) {
+    customerProfile {
+      businessCard
+      customerClass
+      
+      customerClassLocalized
+      city {
+        arName
+        enName
+        id
+        name
+      }
+      companyName
+      dob
+      driverLicense
+      driverLicenseExpireAt
+      driverLicenseStatus
+      email
+      firstName
+      gender
+      lastName
+      borderNumber
+      visaImage
+      licenseFrontImage
+      licenseSelfieImage
+      nidImage 
+      middleName
+      name
+      blockingStatus
+      blockingAllies
+      blockingReason
+      nationalIdExpireAt
+      nationalIdVersion
+      nationality {
+        arName
+        enName
+        id
+        name
+      }
+      nid
+      passportExpireAt
+      passportFrontImage
+      passportNumber
+      status
+      title
+    }
+    id
+    lat
+    lng
+    name
+    dob
+    nid
+    email
+    gender
+    firstName
+    isActive
+    lastName
+    mobile
+    emailConfirmed
+    driverLicense
+    driverLicenseExpireAt
+    driverLicenseStatus
+    licenseFrontImage
+    licenseSelfieImage
+    passportNumber
+    profileImage
+    status
+    companyName
+    createdAt
+    isCustomerProfileCompleted
+    middleName
+    name
+    title
+    roles {
+      arName
+      enName
+      id
+    }
+  }
+}
+
+query GetUserDetailsQuery($id: ID!) {
+  user(id: $id) {
+    customerProfile {
+      nid
+      email
+    }
+    id
+    lat
+    lng
+    name
+    dob
+    nid
+    email
+    gender
+    firstName
+    isActive
+    lastName
+    mobile
+    emailConfirmed
+    driverLicense
+    driverLicenseExpireAt
+    driverLicenseStatus
+    licenseFrontImage
+    licenseSelfieImage
+    passportNumber
+    profileImage
+    status
+    companyName
+    createdAt
+    isCustomerProfileCompleted
+    middleName
+    name
+    title
+    roles {
+      arDescription
+      arName
+      description
+      enDescription
+      enName
+      id
+      isActive
+      name
+      privileges {
+        feature
+        id
+        name
+        nameLocalized
+      }
+    }
+  }
+}

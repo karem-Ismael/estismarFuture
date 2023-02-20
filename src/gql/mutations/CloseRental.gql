@@ -1,0 +1,20 @@
+mutation CloseRental($rentalId: ID!, $closeReasonId: Int!, $note: String) {
+  closeRental(rentalId: $rentalId, closeReasonId: $closeReasonId, note: $note) {
+    errors
+    status
+  }
+}
+mutation CloseBusinessRental(
+  $businessRentalId: ID!
+  $closedReason: String
+  $closedReasons: [Int!]!
+) {
+  closeBusinessRental(
+    businessRentalId: $businessRentalId
+    closedReason: $closedReason
+    closedReasons: $closedReasons
+  ) {
+    errors
+    status
+  }
+}

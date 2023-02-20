@@ -1,0 +1,19 @@
+
+.astrik{
+    position: relative !important;
+}
+
+ .astrik:after{
+content: "*" ;
+color: red ;
+left: 60px;
+position: absolute;
+
+}
+body.rtl .astrik:after{
+    content: "*" !important;
+    color: red !important;
+    right: 60px;
+    position: absolute;
+    
+    }

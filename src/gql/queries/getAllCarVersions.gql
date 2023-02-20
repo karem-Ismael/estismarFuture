@@ -1,0 +1,47 @@
+query CarVersions(
+  $limit: Int
+  $page: Int
+  $carMakeId: ID
+  $carModelId: Int
+  $transmission: String
+  $year: Int
+  $vehicleTypeId: ID
+) {
+  carVersions(
+    limit: $limit
+    page: $page
+    carMakeId: $carMakeId
+    carModelId: $carModelId
+    transmission: $transmission
+    year: $year
+    vehicleTypeId: $vehicleTypeId
+  ) {
+    collection {
+      id
+      transmission
+      enName
+      arName
+      isActive
+      carModel {
+        arName
+        enName
+        make {
+          arName
+          enName
+        }
+      }
+      vehicleType {
+        arName
+        enName
+      }
+      image
+      year
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

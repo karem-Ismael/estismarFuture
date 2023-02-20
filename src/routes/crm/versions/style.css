@@ -1,0 +1,12 @@
+.MuiChip-root {
+  background: none !important;
+  align-items: flex-start !important;
+}
+
+.custom-textfield div {
+  min-height: 40px !important;
+  /* height: auto !important; */
+}
+.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot {
+  padding: 1px !important ;
+}

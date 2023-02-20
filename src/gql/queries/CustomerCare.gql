@@ -1,0 +1,8 @@
+query Users {
+  users(limit: 500, page: 1, type: "customer_care") {
+    collection {
+      id
+      name
+    }
+  }
+}

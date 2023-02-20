@@ -1,0 +1,57 @@
+query BusinessRequests(
+  $limit: Int
+  $page: Int
+  $id: ID
+  $makeId: ID
+  $pickUpCityId: ID
+  $customerName: String
+) {
+  businessRequests(
+    limit: $limit
+    page: $page
+    id: $id
+    makeId: $makeId
+    pickUpCityId: $pickUpCityId
+    customerName: $customerName
+  ) {
+    collection {
+      additionalNotes
+      allyCompanyId
+      bookingNo
+      businessActivityId
+      businessActivityName
+      carImage
+      carModelId
+      carVersionId
+      commercialRegistrationCertificate
+      commercialRegistrationNo
+      companyEmail
+      companyName
+      companyPhone
+      createdAt
+      id
+      insuranceId
+      makeId
+      makeName
+      modelName
+      numberOfCars
+      numberOfMonths
+      otherCarName
+      phone
+      pickUpCityId
+      pickUpCityName
+      pickUpDatetime
+      userId
+      status
+      customerName
+      insuranceName
+      year
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

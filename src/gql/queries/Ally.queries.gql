@@ -1,0 +1,121 @@
+query GetAllyCompanyQuery($id: ID!) {
+  allyCompany(id: $id) {
+    isApiIntegrated
+    allyClass
+    allyRateId
+    rate
+    arName
+    isB2b
+    isB2c
+    bankCardImage
+    commercialRegistrationImage
+    isOnlinePayEnable
+    allyHandoverCities {
+      dropOffCityId
+      isFree
+      pickUpCityId
+      price
+    }
+    canHandoverInAntherCity
+    allyExtraServices {
+      extraServiceId
+      isActive
+      isRequired
+      payType
+      serviceValue
+      showFor
+      id
+    }
+    branches {
+      address
+      lat
+      lng
+      allyCompanyId
+      allyFeatures {
+        arName
+      }
+
+      arName
+      bankCardImage
+      branchClass
+      branchState
+      branchWorkingDays {
+        branchId
+      }
+      carCount
+      deliverToAirport
+      distanceBetweenBranchUser
+      enName
+      id
+      isActive
+      lat
+      lng
+      lonlat
+      # managerName
+      name
+      officeNumber
+      rate
+      shiftsToday {
+        branchId
+      }
+    }
+    commercialRegestration
+    commisionRate
+    conditions
+    email
+    enName
+    allyExtraServices {
+      allyCompanyId
+      arSubtitle
+      enSubtitle
+
+      extraServiceId
+      id
+      isActive
+      isRequired
+      payType
+      serviceValue
+      showFor
+      subtitle
+      totalServiceValue
+    }
+    features
+    id
+    isActive
+    licenceImage
+    logo
+    managerName
+    name
+    officeNumber
+    payments {
+      arName
+      enName
+      id
+      name
+    }
+    phoneNumber
+    isExtendFixedPrice
+  }
+}
+
+query GetAllyDropDown {
+  # LIMITATIONS
+  allyCompanies(limit: 500) {
+    collection {
+      id
+      arName
+      enName
+      name
+      isB2b
+    }
+  }
+}
+
+query GetBidOfferAllyDropDown($businessRequestId: ID) {
+  allyCompanies(businessRequestId: $businessRequestId, limit: 500) {
+    collection {
+      id
+      name
+    }
+  }
+}

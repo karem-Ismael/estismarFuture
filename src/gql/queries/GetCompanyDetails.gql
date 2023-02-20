@@ -1,0 +1,25 @@
+query AllyCompany($id: ID!) {
+  allyCompany(id: $id) {
+    allyClass
+    arName
+    commercialRegestration
+    commercialRegistrationImage
+    commisionRate
+    # conditions
+    email
+    enName
+    #extraServices
+    features
+    id
+    isActive
+    licenceImage
+    logo
+    managerName
+    name
+    officeNumber
+    phoneNumber
+    allyRate {
+      name
+    }
+  }
+}

@@ -1,0 +1,46 @@
+query Cars(
+  $limit: Int
+  $page: Int
+  $bookingStatus: String
+  $isActive: Boolean
+  $branchId: ID
+  $model: ID
+  $make: ID
+) {
+  cars(
+    limit: $limit
+    page: $page
+    model: $model
+    isActive: $isActive
+    branchId: $branchId
+    make: $make
+    bookingStatus: $bookingStatus
+  ) {
+    collection {
+      transmission
+      make {
+        arName
+        enName
+      }
+
+      id
+      carModel {
+        arName
+        enName
+      }
+
+      branch {
+        arName
+        enName
+      }
+      bookingStatus
+      availabilityStatus
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

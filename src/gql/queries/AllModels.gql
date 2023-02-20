@@ -1,0 +1,34 @@
+query CarModels($limit: Int, $page: Int, $make: Int, $orderBy: String, $sortBy: String) {
+  carModels(limit: $limit, page: $page, make: $make, sortBy: $sortBy, orderBy: $orderBy) {
+    collection {
+      id
+      arName
+      enName
+      make {
+        enName
+        arName
+      }
+      #   cars{
+      #     carModelName
+
+      #   }
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}
+
+query CarModelById($id: ID!) {
+  carModel(id: $id) {
+    arName
+    enName
+    id
+    make {
+      id
+    }
+  }
+}

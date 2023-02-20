@@ -1,0 +1,7 @@
+query VehicleTypes($orderBy: String, $sortBy: String) {
+  vehicleTypes(orderBy: $orderBy, sortBy: $sortBy) {
+    arName
+    enName
+    id
+  }
+}

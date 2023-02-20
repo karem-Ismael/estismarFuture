@@ -1,0 +1,47 @@
+.rct-sidebar .site-logo {
+  @media screen and (min-width: 901px) {
+    padding-top: 65px;
+  }
+  @media screen and (max-width: 900px) {
+    padding-top: 55px;
+  }
+}
+
+.rct-footer {
+  margin-top: 20px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  li {
+    display: block !important;
+  }
+}
+.Mui-error::after, .Mui-error+ p{
+    display: none;
+  }
+@media screen and (max-width: 900px) {
+  .grid-insurance-cars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    width: 100%;
+    margin: 0;
+  }
+  .ecom-dashboard-wrapper > .row {
+    display: block !important;
+    .w-50,
+    .w-60 {
+      width: 100% !important;
+    }
+  }
+}
+
+.add-edit-coupons .invisible{
+  display: none;
+}
+
+.add-edit-coupons p.visible{
+  margin-bottom: 0!important;
+}

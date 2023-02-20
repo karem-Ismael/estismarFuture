@@ -1,0 +1,52 @@
+query AllyManagerProfile($allyProfileId: ID) {
+  allyManagerProfile(allyProfileId:$allyProfileId) {
+    allyId
+    bankAccountBankName
+    bankAccountBranchCity
+    bankAccountFullName
+    bankAccountIban
+    branches
+    companyHasBusinessRentals
+    companyHasBusinessRequests
+    companyName
+    createdAt
+    dob
+    email
+    firstName
+    gender
+    id
+    idPhoto
+    isAllyManager
+    isCompanyB2b
+    isDeleted
+    jurisdictionAreas {
+      arName
+      enName
+      id
+      name
+    }
+    lastName
+    locale
+    middleName
+    name
+    nationalId
+    nationality
+    passportNum
+    region {
+      arName
+      displayOrder
+      enName
+      id
+      name
+    }
+    regionId
+    town
+    user {
+      createdAt
+      id
+      isActive
+      mobile
+      profileImage
+    }
+  }
+}

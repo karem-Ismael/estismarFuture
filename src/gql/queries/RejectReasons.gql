@@ -1,0 +1,10 @@
+query RejectedReasons($status: String!, $userType: String!) {
+  rejectedReasons(status: $status, userType: $userType) {
+    arBody
+    body
+    enBody
+    id
+    status
+    userType
+  }
+}

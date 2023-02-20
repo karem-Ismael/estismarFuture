@@ -1,0 +1,10 @@
+query Features($isParent: Boolean, $isActive: Boolean, $category: String) {
+  features(isParent: $isParent, isActive: $isActive, category: $category) {
+    collection {
+      nameAr
+      nameEn
+      id
+      icon
+    }
+  }
+}

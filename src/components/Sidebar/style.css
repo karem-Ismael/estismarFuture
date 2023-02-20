@@ -1,0 +1,20 @@
+.scrollbar-vertical {
+  top: 0;
+  right: 0;
+  width: 17px;
+  height: 100%;
+  overflow-x: hidden;
+  scrollbar-3dlight-color: rgb(228, 68, 68) !important;
+  scrollbar-arrow-color: rgb(192, 19, 19) !important;
+  scrollbar-base-color: rgb(160, 30, 30) !important;
+  scrollbar-face-color: rgb(207, 25, 25) !important;
+  border-radius: 5px 5px !important;
+}
+.rct-sidebar-wrap .rct-scroll > div:first-child {
+  height: 550px;
+  overflow-x: clip !important;
+  height: 75% !important;
+}
+.activelink {
+  background-color: lightslategray !important;
+}

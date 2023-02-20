@@ -1,0 +1,9 @@
+mutation ResendRentalExtensionIntegration($rentalExtensionId:ID!) {
+  resendRentalExtensionIntegration(rentalExtensionId:$rentalExtensionId) {
+    errors
+    rentalDateExtensionRequest {
+      id
+    }
+    status
+  }
+}

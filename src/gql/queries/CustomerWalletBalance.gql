@@ -1,0 +1,7 @@
+query UserWallet($userId:Int!){
+  userWallet(userId:$userId)
+  {
+    id
+    balance
+  }
+}

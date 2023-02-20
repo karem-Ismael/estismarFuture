@@ -1,0 +1,291 @@
+query CarProfile($id: ID!, $lat: Float, $lng: Float, $period: Int) {
+  carProfile(id: $id, lat: $lat, lng: $lng, period: $period) {
+    accidentPenalty
+    additionalDistanceCost
+    allyConditions
+    availabilityStatus
+    bookingStatus
+    branchClass
+    branchId
+    carIdImage
+    carImages
+    referenceCode
+
+    branch {
+      address
+      allyCompany {
+        allyClass
+        arName
+        bankCardImage
+        branches {
+          address
+          allyCompanyId
+          arName
+          areaId
+          bankCardImage
+          branchClass
+          branchState
+          canDelivery
+          carCount
+          cheapestCarPrice
+          deliverToAirport
+          distanceBetweenBranchUser
+          enName
+          fixedDeliveryFees
+          id
+          isActive
+          lat
+          lng
+          lonlat
+          name
+          officeNumber
+          rate
+        }
+        commercialRegestration
+        commercialRegistrationImage
+        commisionRate
+        conditions
+        email
+        enName
+        extraServices
+        features
+        id
+        isActive
+        licenceImage
+        logo
+        name
+        officeNumber
+        payments {
+          arName
+          enName
+          id
+          name
+        }
+        phoneNumber
+      }
+      allyCompanyId
+      allyFeatures {
+        arName
+        enName
+        id
+        name
+      }
+      arName
+      area {
+        arName
+        branches {
+          address
+          allyCompanyId
+          arName
+          areaId
+          bankCardImage
+          branchClass
+          branchState
+          canDelivery
+          carCount
+          cheapestCarPrice
+          deliverToAirport
+          distanceBetweenBranchUser
+          enName
+          fixedDeliveryFees
+          id
+          isActive
+          lat
+          lng
+          lonlat
+          name
+          officeNumber
+          rate
+        }
+        centerLat
+        centerLng
+        enName
+        id
+        isAirport
+        name
+      }
+      areaId
+      bankCardImage
+      branchClass
+      branchState
+      branchWorkingDays {
+        branchId
+        endTime
+        id
+        isOn
+        startTime
+        weekDay
+        weekDayString
+      }
+      canDelivery
+      carCount
+      cars {
+        accidentPenalty
+
+        additionalDistanceCost
+        allyConditions
+        availabilityStatus
+        bookingStatus
+        branch {
+          address
+          allyCompanyId
+          arName
+          areaId
+          bankCardImage
+          branchClass
+          branchState
+          canDelivery
+          carCount
+          cheapestCarPrice
+          deliverToAirport
+          distanceBetweenBranchUser
+          enName
+          fixedDeliveryFees
+          id
+          isActive
+          lat
+          lng
+          lonlat
+          name
+          officeNumber
+          rate
+        }
+        branchClass
+        branchId
+        carFeatures {
+          arKey
+          arValue
+          carId
+          enKey
+          enValue
+          featureId
+          icon
+          key
+          value
+        }
+        carIdImage
+        carImages
+
+        carInsurances {
+          carId
+          id
+          insuranceDetails
+          insuranceId
+          insuranceName
+          value
+          monthlyValue
+        }
+        carMakeName
+        carModel {
+          arName
+          enName
+          id
+          name
+        }
+        carModelId
+        carModelName
+        carVersion {
+          arName
+          enName
+          id
+          # image
+          name
+          year
+        }
+        carVersionId
+        carVersionName
+
+        dailyPrice
+        deliverToCustomerLocationCost
+        distance
+        distanceBetweenCarUser
+        distanceByDay
+        distanceByMonth
+        distanceByWeek
+        guaranteeAmount
+        id
+        lat
+        lng
+        lonlat
+        make {
+          arName
+          enName
+          id
+          logo
+          name
+          status
+        }
+        makeId
+        monthlyPrice
+        priceForPeriod
+        transmission
+        transmissionName
+        vehicleType {
+          arName
+          enName
+          id
+          image
+          name
+          status
+        }
+        vehicleTypeName
+        weeklyPrice
+        year
+      }
+      cheapestCarPrice
+      deliverToAirport
+      distanceBetweenBranchUser
+      enName
+      fixedDeliveryFees
+      id
+      isActive
+      lat
+      lng
+      lonlat
+
+      name
+      officeNumber
+      rate
+      shiftsToday {
+        branchId
+        endTime
+        id
+        isOn
+        startTime
+        weekDay
+        weekDayString
+      }
+    }
+    carMakeName
+
+    carModelId
+    carModelName
+
+    carVersionId
+    carVersionName
+
+    dailyPrice
+    deliverToCustomerLocationCost
+    distance
+    distanceBetweenCarUser
+    distanceByDay
+    distanceByMonth
+    distanceByWeek
+    guaranteeAmount
+    id
+    lat
+    lng
+    lonlat
+
+    makeId
+    monthlyPrice
+
+    priceForPeriod
+    transmission
+    transmissionName
+
+    vehicleTypeName
+    weeklyPrice
+    year
+  }
+}

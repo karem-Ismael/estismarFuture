@@ -1,0 +1,6 @@
+@media (max-width: 500px) {
+  .modal-content {
+    width: calc(100vw - 15px) !important;
+    overflow-x: auto;
+  }
+}

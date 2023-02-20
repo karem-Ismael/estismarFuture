@@ -1,0 +1,14 @@
+mutation LoginDashboardMutation($email: String!, $password: String!) {
+  loginDashboard(input: { email: $email, password: $password }) {
+    token
+    errors
+    status
+  }
+}
+
+mutation LogoutMutation($clientMutationId: String!) {
+  logout(input: { clientMutationId: $clientMutationId }) {
+    errors
+    status
+  }
+}

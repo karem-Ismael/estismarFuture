@@ -1,0 +1,18 @@
+query AllBanners($limit: Int, $page: Int) {
+  banners(limit: $limit, page: $page) {
+    collection {
+      displayOrder
+      id
+      imgAr
+      imgEn
+      isActive
+      createdAt
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

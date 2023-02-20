@@ -1,0 +1,129 @@
+mutation CreateAllyCompanyMutation(
+  $allyClass: String!
+  $arName: String!
+  $bankCardImage: String!
+  $commercialRegestration: String!
+  $commercialRegistrationImage: String!
+  $commisionRate: Float
+  $conditions: [String!]
+  $email: String!
+  $enName: String!
+  $allyFeatures: [ID!]
+  $isActive: Boolean
+  $licenceImage: String!
+  $canHandoverInAntherCity: Boolean
+  $logo: String
+  $managerName: String!
+  $officeNumber: String
+  $paymentIds: [ID!]
+  $phoneNumber: String!
+  $allyRateId: ID
+  $rate: Float
+  $allyExtraServicesAttributes: [AllyExtraServicesAttributes!]
+  $isApiIntegrated: Boolean
+  $isB2c: Boolean
+  $isB2b: Boolean
+  $isExtendFixedPrice: Boolean
+) {
+  createAllyCompany(
+    allyClass: $allyClass
+    isB2c: $isB2c
+    isB2b: $isB2b
+    arName: $arName
+    bankCardImage: $bankCardImage
+    commercialRegestration: $commercialRegestration
+    commercialRegistrationImage: $commercialRegistrationImage
+    commisionRate: $commisionRate
+    conditions: $conditions
+    email: $email
+    enName: $enName
+    allyFeatures: $allyFeatures
+    isActive: $isActive
+    licenceImage: $licenceImage
+    logo: $logo
+    managerName: $managerName
+    officeNumber: $officeNumber
+    paymentIds: $paymentIds
+    phoneNumber: $phoneNumber
+    canHandoverInAntherCity: $canHandoverInAntherCity
+    allyRateId: $allyRateId
+    rate: $rate
+    allyExtraServicesAttributes: $allyExtraServicesAttributes
+    isApiIntegrated: $isApiIntegrated
+    isExtendFixedPrice: $isExtendFixedPrice
+  ) {
+    allyCompany {
+      id
+    }
+    errors
+    status
+  }
+}
+
+mutation UpdateAllyCompany(
+  $allyCompanyId: ID!
+  $isB2c: Boolean
+  $isB2b: Boolean
+  $allyClass: String!
+  $arName: String!
+  $bankCardImage: String!
+  $commercialRegestration: String!
+  $commercialRegistrationImage: String!
+  $commisionRate: Float
+  $conditions: [String!]
+  $email: String!
+  $enName: String!
+  $allyFeatures: [ID!]
+  $isActive: Boolean
+  $licenceImage: String!
+  $logo: String
+  $managerName: String!
+  $officeNumber: String
+  $paymentIds: [ID!]
+  $phoneNumber: String!
+  $isOnlinePayEnable: Boolean
+  $handoverCitiesAttributes: [AllyHandoverCityAttributes!]
+  $canHandoverInAntherCity: Boolean
+  $allyRateId: ID
+  $rate: Float
+  $allyExtraServicesAttributes: [AllyExtraServicesAttributes!]
+  $isApiIntegrated: Boolean
+  $isExtendFixedPrice: Boolean
+) {
+  updateAllyCompany(
+    isB2c: $isB2c
+    isB2b: $isB2b
+    allyCompanyId: $allyCompanyId
+    allyClass: $allyClass
+    arName: $arName
+    bankCardImage: $bankCardImage
+    commercialRegestration: $commercialRegestration
+    commercialRegistrationImage: $commercialRegistrationImage
+    commisionRate: $commisionRate
+    conditions: $conditions
+    email: $email
+    enName: $enName
+    allyFeatures: $allyFeatures
+    isActive: $isActive
+    licenceImage: $licenceImage
+    logo: $logo
+    managerName: $managerName
+    officeNumber: $officeNumber
+    paymentIds: $paymentIds
+    phoneNumber: $phoneNumber
+    isOnlinePayEnable: $isOnlinePayEnable
+    handoverCitiesAttributes: $handoverCitiesAttributes
+    canHandoverInAntherCity: $canHandoverInAntherCity
+    allyRateId: $allyRateId
+    rate: $rate
+    allyExtraServicesAttributes: $allyExtraServicesAttributes
+    isApiIntegrated: $isApiIntegrated
+    isExtendFixedPrice: $isExtendFixedPrice
+  ) {
+    allyCompany {
+      id
+    }
+    errors
+    status
+  }
+}

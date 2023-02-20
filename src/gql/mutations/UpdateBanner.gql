@@ -1,0 +1,18 @@
+mutation UpdateBanner(
+  $displayOrder: Int
+  $id: ID!
+  $imgAr: String!
+  $imgEn: String!
+  $isActive: Boolean
+) {
+  updateBanner(
+    displayOrder: $displayOrder
+    id: $id
+    imgAr: $imgAr
+    imgEn: $imgEn
+    isActive: $isActive
+  ) {
+    errors
+    status
+  }
+}

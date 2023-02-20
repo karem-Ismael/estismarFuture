@@ -1,0 +1,50 @@
+query Profile {
+  profile {
+    allyProfile {
+      allyId
+      bankAccountBankName
+      bankAccountBranchCity
+      bankAccountFullName
+      bankAccountIban
+      companyName
+      dob
+      email
+      firstName
+      jurisdictionAreas {
+        arName
+        enName
+        id
+        name
+      }
+      lastName
+      name
+      town
+    }
+    companyName
+    createdAt
+    dob
+    driverLicense
+    driverLicenseExpireAt
+    driverLicenseStatus
+    email
+    emailConfirmed
+    firstName
+    gender
+    id
+    isActive
+    isCustomerProfileCompleted
+    lastName
+    lat
+    licenseFrontImage
+    licenseSelfieImage
+    lng
+    middleName
+    mobile
+    name
+    nid
+    passportNumber
+    profileImage
+    status
+    title
+  }
+}

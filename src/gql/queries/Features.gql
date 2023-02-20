@@ -1,0 +1,26 @@
+query Features($limit: Int, $page: Int, $isActive: Boolean, $name: String, $parentId: ID) {
+  features(limit: $limit, page: $page, isActive: $isActive, name: $name, parentId: $parentId) {
+    collection {
+      addedBy
+      displayOrder
+      icon
+      id
+      isActive
+      name
+      nameAr
+      nameEn
+      parentId
+      updatedBy
+      parent {
+        nameAr
+        nameEn
+      }
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

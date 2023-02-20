@@ -1,0 +1,6 @@
+mutation DeleteRate($rateId: ID!) {
+  deleteRate(rateId: $rateId) {
+    errors
+    status
+  }
+}

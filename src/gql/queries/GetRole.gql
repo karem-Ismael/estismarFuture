@@ -1,0 +1,18 @@
+query Role($id: ID!) {
+  role(id: $id) {
+    arDescription
+    arName
+    description
+    enDescription
+    enName
+    id
+    isActive
+    name
+    privileges {
+      feature
+      id
+      name
+      nameLocalized
+    }
+  }
+}

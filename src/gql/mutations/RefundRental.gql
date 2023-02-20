@@ -1,0 +1,6 @@
+mutation RefundRental($rentalId: ID!, $withDayDeduction: Boolean,$amount:Float,$toWallet:Boolean) {
+  refundRental(rentalId: $rentalId, withDayDeduction: $withDayDeduction,amount:$amount,toWallet:$toWallet) {
+    errors
+    status
+  }
+} 

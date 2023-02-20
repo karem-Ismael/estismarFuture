@@ -1,0 +1,14 @@
+.customerDetails {
+  form {
+    > div {
+      margin: 20px 0 0 0 !important;
+      padding: 0 !important;
+      > div {
+        justify-content: unset !important;
+      }
+    }
+  }
+}
+label {
+  z-index: 0 !important;
+}

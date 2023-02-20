@@ -1,0 +1,6 @@
+mutation ActivateAllyCompany($allyCompanyId: ID!, $isActive: Boolean!) {
+  activateAllyCompany(allyCompanyId: $allyCompanyId, isActive: $isActive) {
+    errors
+    status
+  }
+}

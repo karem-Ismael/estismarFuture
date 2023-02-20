@@ -1,0 +1,6 @@
+mutation ActivateCarVersion($carVersionId: ID!, $isActive: Boolean!) {
+  activateCarVersion(carVersionId: $carVersionId, isActive: $isActive) {
+    errors
+    status
+  }
+}

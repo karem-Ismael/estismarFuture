@@ -1,0 +1,96 @@
+query CarProfile($id: ID!) {
+  carProfile(id: $id) {
+    carsCount
+    allyName
+    referenceCode
+    availableCarsCount
+    accidentPenalty
+    addedBy
+    carInsurances {
+      value
+      monthlyValue
+      insuranceDetails
+      insuranceName
+      insuranceId
+    }
+    additionalDistanceCost
+    allyConditions
+    availabilityStatus
+    bookingStatus
+    branch {
+      name
+      allyCompanyId
+      enName
+      arName
+      id
+    }
+    branchClass
+    branchId
+    carIdImage
+    carImages
+    carMakeName
+    carModel {
+      arName
+      enName
+    }
+    carModelId
+    carModelName
+    carVersion {
+      arName
+      enName
+      images
+      id
+    }
+
+    carVersionId
+    carVersionName
+    color
+    dailyPrice
+    deliverToCustomerLocationCost
+    distance
+    distanceBetweenCarUser
+    distanceByDay
+    distanceByMonth
+    distanceByWeek
+    guaranteeAmount
+    id
+   
+    make {
+      logo
+      arName
+      enName
+    }
+    makeId
+    monthlyPrice
+
+    features {
+      icon
+      id
+      nameAr
+      nameEn
+    }
+    monthsPrice {
+      eightMonths
+      elevenMonths
+      fiveMonths
+      fourMonths
+      nineMonths
+      sevenMonths
+      sixMonths
+      tenMonths
+      threeMonths
+      twelveMonths
+      twentyFourMonths
+      twoMonths
+    }
+    priceForPeriod
+    transmission
+    transmissionName
+    isUnlimited
+    isUnlimitedFree
+    unlimitedFeePerDay
+    vehicleTypeName
+    weeklyPrice
+    year
+  }
+}

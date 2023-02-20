@@ -1,0 +1,20 @@
+query RentalsAudits($id: ID!) {
+  rentalsAudits(id: $id) {
+    createdAt
+    newData
+    oldData
+    rentalId
+    userId
+    userName
+  }
+}
+query BusinessRentalAudits($id: ID!) {
+  businessRentalAudits(id: $id) {
+    createdAt
+    newData
+    oldData
+    businessRentalId
+    userId
+    userName
+  }
+}

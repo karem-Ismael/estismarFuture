@@ -1,0 +1,46 @@
+query Coupons(
+  $allyCompanyId: ID
+  $cityId: ID
+  $from: String
+  $limit: Int
+  $page: Int
+  $to: String
+  $code: String
+) {
+  coupons(
+    allyCompanyId: $allyCompanyId
+    cityId: $cityId
+    from: $from
+    limit: $limit
+    page: $page
+    to: $to
+    code: $code
+  ) {
+    collection {
+      allyCompanies {
+        arName
+        enName
+      }
+      areas {
+        arName
+        enName
+      }
+      isActive
+      code
+      discountType
+      discountValue
+      expireAt
+      id
+      maxLimitValue
+      numOfUsages
+      numOfUsagesPerUser
+      startAt
+    }
+    metadata {
+      currentPage
+      limitValue
+      totalCount
+      totalPages
+    }
+  }
+}

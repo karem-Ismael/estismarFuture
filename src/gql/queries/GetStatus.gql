@@ -1,0 +1,8 @@
+query GetStatus($id: ID!) {
+  rentalDetails(id: $id) {
+    status
+    pickUpDate
+    bookingNo
+    statusLocalized
+  }
+}

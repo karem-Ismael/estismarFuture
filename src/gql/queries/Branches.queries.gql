@@ -1,0 +1,102 @@
+query GetBranchDetails($id: ID!) {
+  branch(id: $id) {
+    allyCompany {
+      arName
+      commisionRate
+      id
+      allyExtraServices {
+        extraService {
+          arTitle
+          enTitle
+          id
+        }
+      }
+    }
+    airport {
+      arName
+      centerLat
+      centerLng
+      enName
+      id
+      name
+    }
+    deliveryGraceTime
+    referenceCode
+    deliverToAirport
+    arName
+    enName
+    bankCardImage
+    areaId
+    enName
+    description
+    districtName
+    districtNameAr
+    districtNameEn
+    canDelivery
+    fixedDeliveryFees
+    arName
+    address
+    allyCompanyId
+    officeNumber
+    mobileNumber
+    lng
+    lat
+    address
+    isActive
+    isOnlinePayEnable
+    paymentMethod
+    deliveryPaymentMethod
+    area {
+      arName
+      centerLat
+      centerLng
+      enName
+      id
+      isAirport
+      name
+    }
+    allyCompanyId
+    branchDeliveryPrices {
+      from
+      to
+      deliveryPrice
+      handoverPrice
+    }
+    regionId
+    canHandover
+    branchWorkingDays {
+      branchId
+      endTime
+      id
+      isOn
+      startTime
+      weekDay
+      weekDayString
+      is24hAvailable
+    }
+    branchExtraServices {
+      allyExtraService {
+        extraServiceId
+        extraService {
+          arTitle
+          enTitle
+        }
+      }
+      allyExtraServiceId
+      id
+      isActive
+      isRequired
+      payType
+      serviceValue
+    }
+  }
+}
+
+query GetBranchNameAndLocation($id: ID!) {
+  branch(id: $id) {
+    arName
+    enName
+    lng
+    lat
+  }
+}
